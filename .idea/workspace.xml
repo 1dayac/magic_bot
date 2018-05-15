@@ -11,47 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="candle_factory.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/candle_factory.py">
+      <file leaf-file-name="candle_factory_5.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="candle_factory_2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/candle_factory_2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3132">
-              <caret line="182" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#54#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="candle_factory_4.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/candle_factory_4.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cande_factory_5.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cande_factory_5.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="376">
+              <caret line="204" column="27" lean-forward="true" selection-start-line="204" selection-start-column="27" selection-end-line="204" selection-end-column="27" />
               <folding>
                 <element signature="e#11#41#0" expanded="true" />
               </folding>
@@ -59,11 +23,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="problems.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/problems.txt">
+      <file leaf-file-name="webdriver.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="106" lean-forward="true" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
+            <state relative-caret-position="510">
+              <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mtgo_controller.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="findwindows.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python3.6/Lib/site-packages/pywinauto/findwindows.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1241">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python3.6/Lib/site-packages/pywinauto/application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5491">
+              <caret line="350" column="0" lean-forward="false" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,32 +76,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>href</find>
-      <find>Price(</find>
-      <find>str(</find>
-      <find>lower</find>
-      <find>ProcessSet</find>
-      <find>replace</find>
-      <find>chance</find>
-      <find>can't proces</find>
-      <find>petr</find>
-      <find>wasn</find>
-      <find>index</find>
-      <find>try</find>
-      <find>088b712b65d6a9f15c193d.png</find>
-      <find>prices</find>
-      <find>mtgol</find>
-      <find>class C</find>
-      <find>cards</find>
-      <find>Mtgoli</find>
-      <find>print</find>
-      <find>sleep</find>
-      <find>manatra</find>
-      <find>mana</find>
+      <find>click_trade</find>
+      <find>succes</find>
+      <find>is_tra</find>
+      <find>click_bot_trade</find>
+      <find>sell</find>
+      <find>urza</find>
+      <find>Collection-CardStack-</find>
       <find>high d</find>
-      <find>MagicCa</find>
-      <find>manatrader</find>
+      <find>IMA</find>
+      <find>drive</find>
+      <find>layout</find>
+      <find>success</find>
+      <find>Parse</find>
+      <find>successfull</find>
+      <find>VRTStore</find>
+      <find>VRTStorebot3</find>
+      <find>text</find>
+      <find>print(2)</find>
+      <find>High</find>
+      <find>trade ca</find>
+      <find>is_trade_cancelled</find>
+      <find>go_to_buy</find>
+      <find>close</find>
+      <find>chai</find>
+      <find>cha</find>
+      <find>CloseButtom</find>
+      <find>start</find>
       <find>high</find>
+      <find>all is</find>
+      <find>start_from</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,12 +122,14 @@
         <option value="$PROJECT_DIR$/problems.txt" />
         <option value="$PROJECT_DIR$/candle_factory_2.py" />
         <option value="$PROJECT_DIR$/cande_factory_5.py" />
+        <option value="$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py" />
+        <option value="$PROJECT_DIR$/candle_factory_5.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="21" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="780" />
     <option name="height" value="688" />
   </component>
@@ -148,28 +150,23 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="candle_factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="candle_factory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="candle_factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="candle_factory" type="462c0819:PsiDirectoryNode" />
-              <item name="parse_internet" type="462c0819:PsiDirectoryNode" />
+              <item name="magic_bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magic_bot" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/candle_factory_5.py" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -188,51 +185,45 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.cande_factory_5">
-    <configuration name="cande_factory_5" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.parser">
+    <configuration name="controller" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/miniconda3/bin/python" />
+      <option name="SDK_HOME" value="C:\Python3.6\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../MTGO_controller" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="candle_factory" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py" />
+      <option name="PARAMETERS" value="C:\Users\meles\PycharmProjects\magic_bot\cards.db" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="parser" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python3.6\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="candle_factory" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cande_factory_5.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="candle_factory" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="candle_factory" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/candle_factory_2.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/candle_factory_5.py" />
+      <option name="PARAMETERS" value="C:\Users\meles\PycharmProjects\magic_bot\cards.db" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.candle_factory" />
-      <item index="1" class="java.lang.String" itemvalue="Python.cande_factory_5" />
+      <item index="0" class="java.lang.String" itemvalue="Python.parser" />
+      <item index="1" class="java.lang.String" itemvalue="Python.controller" />
     </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.cande_factory_5" />
-        <item index="1" class="java.lang.String" itemvalue="Python.candle_factory" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -248,25 +239,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="21" width="1303" height="780" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13912375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.077598825" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29968455" sideWeight="0.40190336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2987988" sideWeight="0.5980966" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12460568" sideWeight="0.5980966" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3978979" sideWeight="0.48535872" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39747635" sideWeight="0.48535872" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -306,211 +298,67 @@
           <line>62</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py</url>
+          <line>451</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="46" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/candle_factory.py">
+    <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3276">
-          <caret line="182" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/problems.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="106" lean-forward="true" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cande_factory_5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2574">
-          <caret line="147" column="26" lean-forward="false" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#11#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="109" column="45" lean-forward="true" selection-start-line="109" selection-start-column="45" selection-end-line="109" selection-end-column="45" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/problems.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory.py">
+    <entry file="file://$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#24#54#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/problems.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5389">
-          <caret line="317" column="0" lean-forward="true" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/problems.txt">
+    <entry file="file://C:/Python3.6/Lib/site-packages/comtypes/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_4.py" />
+    <entry file="file://$PROJECT_DIR$/problems.txt" />
+    <entry file="file://$PROJECT_DIR$/cande_factory_5.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_4.py" />
+    <entry file="file://$PROJECT_DIR$/problems.txt" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_4.py" />
+    <entry file="file://$PROJECT_DIR$/problems.txt" />
+    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
+    <entry file="file://$PROJECT_DIR$/problems.txt" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_3.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
     <entry file="file://C:/Python27/Lib/site-packages/pytesser3/util.py" />
     <entry file="file://C:/Python27/Lib/site-packages/pytesser3/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/resized1.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="11" lean-forward="true" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resized1.bmp" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_3.py" />
     <entry file="file://$USER_HOME$/Anaconda2/Lib/json/encoder.py" />
     <entry file="file://$USER_HOME$/Anaconda2/Lib/json/__init__.py" />
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/remote/utils.py" />
@@ -521,50 +369,88 @@
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/support/select.py" />
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/remote/webelement.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-1998735142/__builtin__.py" />
-    <entry file="file://$PROJECT_DIR$/problems.txt">
+    <entry file="file://$PROJECT_DIR$/problems.txt" />
+    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_4.py" />
+    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
+    <entry file="file://$PROJECT_DIR$/cande_factory_5.py" />
+    <entry file="file://C:/Python3.6/Lib/site-packages/comtypes/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="106" lean-forward="true" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="106" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/652478984/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="3620" column="8" lean-forward="false" selection-start-line="3620" selection-start-column="8" selection-end-line="3620" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory.py">
+    <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/chrome/options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="157" column="8" lean-forward="true" selection-start-line="157" selection-start-column="8" selection-end-line="157" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python3.6/Lib/site-packages/pywinauto/findwindows.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="570" column="0" lean-forward="false" selection-start-line="570" selection-start-column="0" selection-end-line="570" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python3.6/Lib/site-packages/pywinauto/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5491">
+          <caret line="350" column="0" lean-forward="false" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/652478984/sys.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_4.py">
+    <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3132">
-          <caret line="182" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cande_factory_5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        <state relative-caret-position="376">
+          <caret line="204" column="27" lean-forward="true" selection-start-line="204" selection-start-column="27" selection-end-line="204" selection-end-column="27" />
           <folding>
             <element signature="e#11#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
