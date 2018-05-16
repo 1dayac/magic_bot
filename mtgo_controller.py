@@ -16,7 +16,8 @@ class TradeStatus(Enum):
 trusted_bots = ["HotListBot3", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
                  "Blacklotusbot", "Power9bot", "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1",
                 "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot", "cardimaniaEMERALD",
-                "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTStorebot", "Manatraders_booster1"]
+                "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTStorebot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
+                "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5"]
 
 class NoConfirmTradeException(Exception):
     pass
@@ -25,7 +26,7 @@ class NoConfirmTradeException(Exception):
 set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Expeditions", "PZ2" : "You Make the Cube",  "MRD" : "Mirrodin", "KLD" : "Kaladesh", "EMN" : "Eldritch Moon", "ISD" : "Innistrad",
             "OGW" : "Oath of the Gatewatch", "DKA" : "Dark Ascension", "CMD" : "Commander (2011 Edition)", "ZEN" : "Zendikar", "XLN" : "Ixalan", "RIX" : "Rivals of Ixalan", "AVR" : "Avacyn Restored",
             "GTC" : "Gatecrash", "MOR" : "Morningtide", "HOU" : "Hour of Devastation", "SOI" : "Shadows over Innistrad", "A25" : "Masters 25",
-            "BFZ" : "Battle for Zendikar", "JOU" : "Journey into Nyx",  "IMA" : "Iconic Masters", "ORI" : "Magic Origins", "DTK" : "Dragons of Tarkir", "FRF" : "Fate Reforged",
+            "BFZ" : "Battle for Zendikar", "JOU" : "Journey into Nyx",  "IMA" : "Iconic Masters", "ORI" : "Magic Origins", "TPR" : "Tempest Remastered", "WL" : "Weatherlight","DTK" : "Dragons of Tarkir", "FRF" : "Fate Reforged",
             "M15" : "Magic 2015", "M14" : "Magic 2014", "M13" : "Magic 2013", "M12" : "Magic 2012", "M11" : "Magic 2011",
             "MMA" : "Modern Masters (2013 Edition)", "MM2" : "Modern Masters (2015 Edition)", "MM3" : "Modern Masters (2017 Edition)", "RTR" : "Return to Ravnica", "WWK" : "Worldwake", "ARB" : "Alara Reborn", "EVE" : "Eventide",
             "SHM" : "Shadowmoor", "10E" : "Tenth Edition", "9ED" : "Ninth Edition", "8ED" : "Eighth Edition", "7E" : "Seventh Edition", "LRW" : "Lorwyn",
@@ -181,7 +182,9 @@ class MTGO_bot(object):
             self.app.top_window().window(auto_id="UsernameTextBox").type_keys("VerzillaBot")
             self.app.top_window().window(auto_id="PasswordBox").type_keys("Lastborn220")
             time.sleep(2.5)
-            self.app.top_window().window(auto_id="PasswordBox").type_keys("{ENTER}{ENTER}")
+            self.app.top_window().window(auto_id="PasswordBox").type_keys("{ENTER}")
+            pyautogui.press('enter')
+
             time.sleep(20)
             click_collection(self.app)
             time.sleep(10)
@@ -265,6 +268,10 @@ class MTGO_bot(object):
                 self.db_record[5] = "ManaTraders_Seller2"
             if self.db_record[5] == "Manatraders_seller3":
                 self.db_record[5] = "ManaTraders_Seller3"
+            if self.db_record[5] == "Manatraders_seller4":
+                self.db_record[5] = "ManaTraders_Seller4"
+            if self.db_record[5] == "Manatraders_seller5":
+                self.db_record[5] = "ManaTraders_Seller5"
             click_trade(self.app)
             self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
 
@@ -374,7 +381,6 @@ class MTGO_bot(object):
             except:
                 return
             self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("{ENTER}")
-            time.sleep(1)
 
             num_of_tix = get_tix_number(self.app)
             if num_of_tix != 0:
