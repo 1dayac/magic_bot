@@ -6,8 +6,10 @@ import time
 import sys
 import pickle
 from datetime import datetime
-import signal
-
+from bs4 import BeautifulSoup
+import urllib.request
+import itertools
+import re
 
 try:
     f = open("obj/dict.pkl", 'rb')
@@ -32,18 +34,20 @@ class Price:
         self.url = ""
         self.buy_price = 0.0
         self.sell_price = 0.0
-        self.bot_name = ""
+        self.bot_name_buy = ""
+        self.bot_name_sell = ""
         self.number = 0
 
-    def __init__(self, url, buy_price, sell_price, bot_name, number):
+    def __init__(self, url, buy_price, sell_price, bot_name_buy, bot_name_sell, number):
         self.url = url
         self.buy_price = buy_price
         self.sell_price = sell_price
-        self.bot_name = bot_name
+        self.bot_name_buy = bot_name_buy
+        self.bot_name_sell = bot_name_sell
         self.number = number
 
     def __str__(self):
-        return str(self.buy_price) + "\t" + str(self.sell_price) + "\t"
+        return str(self.buy_price) + "\t" + self.bot_name_buy + "\t" + str(self.sell_price) + "\t" + self.bot_name_sell +"\t"
 
 
 
@@ -87,7 +91,7 @@ class Card:
 import platform
 
 if platform.system() == "Windows":
-    chromedriver_path = r"C:\Users\IEUser\Desktop\magic_bot\magic_bot\chromedriver.exe"
+    chromedriver_path = r"C:\Users\meles\PycharmProjects\magic_bot\chromedriver.exe"
 else:
     chromedriver_path = "/home/dmm2017/PycharmProjects/candle_factory/chromedriver"
 
@@ -174,26 +178,28 @@ class HotlistProcessor(object):
             return
 
         print(setname + " " + cardname + " " + str(price))
-        card = Card(cardname, setname, price)
+        price_struct = Price("", price, 10000, "Hotlistbot3", "", 0)
+        card = Card(cardname, setname, price_struct)
         p = self.ParseMtgolibrary(driver_library, card)
         if not p:
             return
 
         if price - p.sell_price > 0.05 and p.sell_price != 10000:
-            print("High diff: " + p.bot_name + " " + str(price - p.sell_price))
+            print("High diff: " + p.bot_name_sell + " " + str(price - p.sell_price))
             cursor.execute("INSERT OR REPLACE INTO records VALUES(?,?,?,?,?,?,?,?,?)",
-                           [setname + cardname, cardname, setname, price, p.sell_price, p.bot_name, "HotListBot3",
+                           [setname + cardname, cardname, setname, price, p.sell_price, p.bot_name_sell, "HotListBot3",
                             datetime.now(), min(4, p.number)])
     def get_symbol(self, img_src):
         if img_src in prices_d.keys():
             return prices_d[img_src]
         else:
+            print(img_src)
             symbol = sys.stdin.readline()
             prices_d[img_src] = symbol
             pickle.dump(prices_d, open("obj/dict.pkl", "wb"))
             return symbol
 
-    def ParseMtgolibrary(self, driver, card):
+    def ParseMtgolibrary(self, driver, card, parse_buyers = False):
         setname = card.set.upper()
         if setname.startswith("BOO"):
             return False
@@ -211,17 +217,18 @@ class HotlistProcessor(object):
         if len(elem) == 0:
             return False
         first = True
+        number = 0
+        bot_name_sell = ""
         for e in elem:
-            price = ""
             try:
                 table_setname = e.find_elements_by_class_name("setname")[0].text
                 if table_setname != setname:
                     continue
                 number = int(e.find_elements_by_class_name("sell_quantity")[0].text)
-                bot_name = e.find_elements_by_class_name("bot_name")[0].text
-                if not bot_name.startswith("ManaTrade") and first != True:
+                bot_name_sell = e.find_elements_by_class_name("bot_name")[0].text
+                if not bot_name_sell.startswith("ManaTrade") and first != True:
                     continue
-                if bot_name == "":
+                if bot_name_sell == "":
                     continue
 
                 # print(e.find_elements_by_class_name("bot_name")[0].text)
@@ -235,7 +242,6 @@ class HotlistProcessor(object):
             for image in images.find_elements_by_tag_name('img'):
                 index += 1
                 img_src = image.get_attribute("src")
-                print(img_src)
                 symbol = self.get_symbol(img_src)
                 res.append(symbol)
             # print("".join(res).replace('\n', ''))
@@ -244,8 +250,88 @@ class HotlistProcessor(object):
             except:
                 sell_price = 100000
             break
-        return Price(url, 0, sell_price, bot_name, number)
+        if not parse_buyers:
+            return Price(url, 0, sell_price, "", bot_name_sell, number)
+
+        elem2 = driver.find_elements_by_class_name("buy_row")
+        bot_name_buy = ""
+        number = 0
+        for e in elem2:
+            try:
+                bot_name_buy = e.find_elements_by_class_name("bot_name")[0].get_attribute('textContent').strip()
+                number = int(e.find_elements_by_class_name("buy_quantity")[0].get_attribute('textContent').strip().replace("+", ""))
+
+                if bot_name_buy == "":
+                    continue
+
+                table_setname = e.find_elements_by_class_name("setname")[0].get_attribute('textContent').strip()
+                if table_setname != setname:
+                    continue
+
+                tickets = float(re.split("[+\-]", e.find_elements_by_class_name("tickets")[0].get_attribute('textContent').strip())[0])
+            except:
+                continue
+            images = e.find_element_by_class_name("buy_price_round")
+            index = 0
+            res = []
+            for image in images.find_elements_by_tag_name('img'):
+                index += 1
+                img_src = image.get_attribute("src")
+                symbol = self.get_symbol(img_src)
+                res.append(symbol)
+            try:
+                buy_price = float("".join(res).replace('\n', ''))
+            except:
+                buy_price = -1
+            if tickets > buy_price:
+                break
+        return Price(url, buy_price, sell_price, bot_name_buy, bot_name_sell, number)
 
 
 processeor = HotlistProcessor()
-processeor.processHotlist()
+#processeor.processHotlist()
+
+new_pricelists = [#"https://www.mtggoldfish.com/index/DOM#online",
+                  #"https://www.mtggoldfish.com/index/KLD#online",
+                  #"https://www.mtggoldfish.com/index/AER#online",
+                  #"https://www.mtggoldfish.com/index/XLN#online",
+                  #"https://www.mtggoldfish.com/index/RIX#online",
+                  #"https://www.mtggoldfish.com/index/HOU#online",
+                  #"https://www.mtggoldfish.com/index/AKH#online"
+                  "https://www.mtggoldfish.com/index/BFZ#online",
+                  "https://www.mtggoldfish.com/index/SOI#online",
+                   "https://www.mtggoldfish.com/index/ROE#online"]
+
+cards = []
+
+def processPricelist(url):
+    soup = BeautifulSoup(urllib.request.urlopen(url), 'html.parser')
+    table = soup.findAll("table", {"class": "tablesorter-bootstrap-popover-online"})[0]
+    rows1 = table.findChildren(['tr'])
+    for i in range(1, len(rows1)):
+        row = rows1[i]
+        cells = row.find_all('td')
+        cardname = cells[0].find('a').get_text()
+        setname = cells[1].get_text()
+        if setname == "DOM":
+            setname = "DAR"
+        price = float(cells[3].get_text())
+        if price < 0.1:
+            return
+        price_struct = Price("", -1, price, "", "Cardbot4", 0)
+        cards.append(Card(cardname, setname, price_struct))
+
+for url in new_pricelists:
+    processPricelist(url)
+
+for card in cards:
+    price = processeor.ParseMtgolibrary(driver_library, card, True)
+    if price == False:
+        continue
+
+    if price.buy_price > price.sell_price + 0.05:
+        print(card.name + " " + str(price))
+    else:
+        print("No" + card.name)
+
+
