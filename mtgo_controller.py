@@ -5,6 +5,7 @@ import pyautogui
 import sys
 import os
 from enum import Enum
+import math
 
 class TradeStatus(Enum):
     SUCCESS = 1
@@ -13,11 +14,14 @@ class TradeStatus(Enum):
     BIG_FAILURE = 4
     NONE = 5
 
-trusted_bots = ["HotListBot3", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
+
+trusted_sell_bots = ["MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MTGO_Megastore4", "MTGO_Megastore5", "HotListBot3","HotListBot2", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
                  "Blacklotusbot", "Power9bot", "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1",
                 "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot", "cardimaniaEMERALD",
                 "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTStorebot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
-                "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5"]
+                "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices"]
+
+trusted_buy_bots = ["HotListBot3", "HotListBot2", "Power9bot", "CalebDBot", "CalebDBot2", "botomagic", "staplesomagic", "SuperCardBot", "SuperCardBot2", "GarrukCardBot", "VRTStoreBuyBot"]
 
 class NoConfirmTradeException(Exception):
     pass
@@ -34,10 +38,10 @@ set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Exped
             "GPT" : "Guild Pact", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
             "ST" : "Stronghold", "TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey",
             "NE" : "Nemesis", "MM" : "Mercadian Masques", "THS" : "Theros", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
-            "M10" : "Magic 2010", "UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "C14" : "Commander 2014",
+            "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
 			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City Of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
-            "ME4" : "Masters Edition IV", "ME3" : "Masters Edition III", "IN" : "Invasion"}
+            "ME4" : "Masters Edition IV", "ME3" : "Masters Edition III", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir"}
 
 class Card:
     def __init__(self):
@@ -116,7 +120,7 @@ def close_chat(app):
         except:
             pass
 
-def get_tix_number(app):
+def get_tix_number(app, botname):
     import io
     import sys
     stringio = io.StringIO()
@@ -125,11 +129,19 @@ def get_tix_number(app):
     app.top_window().window(auto_id="ChatItemsControl").print_control_identifiers()
     sys.stdout = previous_stdout
     string = stringio.getvalue()
-    pos = string.rfind("Take")
-    pos1 = string.find(" ", pos + 1) + 1
-    pos2 = string.find(" ", pos1)
-    num_of_tix = int(string[pos1: pos2])
-    print("Taking " + str(num_of_tix) + " tix")
+    num_of_tix = 0
+    if botname.startswith("Hot"):
+        pos = string.rfind("Take")
+        pos1 = string.find(" ", pos + 1) + 1
+        pos2 = string.find(" ", pos1)
+        num_of_tix = int(string[pos1: pos2])
+        print("Taking " + str(num_of_tix) + " tix")
+    else:
+        pos = string.rfind("Please take up to")
+        pos1 = string.find(" ", pos + 1) + 1
+        pos2 = string.find(" ", pos1)
+        num_of_tix = math.floor(float(string[pos1: pos2]))
+        print("Taking " + str(num_of_tix) + " tix")
     return num_of_tix
 
 
@@ -195,6 +207,13 @@ class MTGO_bot(object):
         except:
             pass
 
+    def switch_bot(self):
+        if self.db_record[6] == "HotListBot3":
+            self.db_record[6] = "HotListBot2"
+        elif self.db_record[6] == "HotListBot2":
+            self.db_record[6] = "HotListBot3"
+        self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[6] + "{ENTER}")
+
 
     def click_bot_trade(self, botname):
         index = 0
@@ -241,7 +260,7 @@ class MTGO_bot(object):
                 records = cursor.execute(command).fetchall()
             self.db_record = list(records[0])
 
-            while  self.db_record[5] not in trusted_bots or self.db_record[6] not in trusted_bots:
+            while  self.db_record[5] not in trusted_sell_bots or self.db_record[6] not in trusted_buy_bots:
                 command = "DELETE FROM records WHERE Id = ?;"
                 cursor.execute(command, [self.db_record[0]]).fetchall()
                 command = "SELECT * FROM records ORDER BY RANDOM() LIMIT 1;"
@@ -347,6 +366,8 @@ class MTGO_bot(object):
             self.trade_status = TradeStatus.SUCCESS
         except:
             print("Unexpected error:", sys.exc_info()[0])
+            command = "DELETE FROM records WHERE Id = ?;"
+            cursor.execute(command, [self.db_record[0]]).fetchall()
             self.trade_status = TradeStatus.BIG_FAILURE
 
     def sell_card(self):
@@ -367,6 +388,7 @@ class MTGO_bot(object):
             time.sleep(15)
 
             while self.is_trade_cancelled():
+                self.switch_bot()
                 self.click_bot_trade(self.db_record[6])
                 time.sleep(10)
 
@@ -382,7 +404,7 @@ class MTGO_bot(object):
                 return
             self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("{ENTER}")
 
-            num_of_tix = get_tix_number(self.app)
+            num_of_tix = get_tix_number(self.app, self.db_record[6])
             if num_of_tix != 0:
                 click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
             for i in range(0, num_of_tix):
@@ -469,7 +491,7 @@ class MTGO_bot(object):
             try:
                 click_rectangle(self.app.top_window().child_window(title_re="Add 1 to", found_index=0).rectangle())
             except:
-                pyautogui.moveRel(30, 30)
+                pyautogui.moveRel(130, 30)
                 pyautogui.click()
                 pass
 

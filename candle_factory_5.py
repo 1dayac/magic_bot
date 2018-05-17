@@ -91,7 +91,7 @@ class Card:
 import platform
 
 if platform.system() == "Windows":
-    chromedriver_path = r"C:\Users\meles\PycharmProjects\magic_bot\chromedriver.exe"
+    chromedriver_path = r"C:\Users\IEUser\Desktop\magic_bot\magic_bot\chromedriver.exe"
 else:
     chromedriver_path = "/home/dmm2017/PycharmProjects/candle_factory/chromedriver"
 
@@ -118,23 +118,24 @@ class HotlistProcessor(object):
         self.rows = []
         self.driver_hotlist = None
         self.start = None
+        self.i = 0
 
     def openHotlist(self):
         url = "http://www.mtgotraders.com/hotlist/#/"
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument("--headless")
-        driver_hotlist = webdriver.Chrome(chromedriver_path, options = chrome_options)
-        driver_hotlist.get(url)
+        self.driver_hotlist = webdriver.Chrome(chromedriver_path, options = chrome_options)
+        self.driver_hotlist.get(url)
         time.sleep(4)
-        elems = driver_hotlist.find_elements_by_class_name('btn')
+        elems = self.driver_hotlist.find_elements_by_class_name('btn')
         elems[0].click()
-        elems_2 = driver_hotlist.find_element_by_xpath(
+        elems_2 = self.driver_hotlist.find_element_by_xpath(
             "//*[@id=\"mainContent\"]/div[2]/div[1]/div[2]/div[4]/div[1]/span[2]/span/ul/li[5]")
         elems_2.click()
         time.sleep(4)
-        table = driver_hotlist.find_element_by_id('main-table')
+        table = self.driver_hotlist.find_element_by_id('main-table')
         rows = table.find_elements_by_tag_name('tr')
-        return driver_hotlist, rows
+        return rows
 
 
 
@@ -143,20 +144,22 @@ class HotlistProcessor(object):
 
 
     def processHotlist(self):
-        self.driver_hotlist, self.rows = self.openHotlist()
+        self.rows = self.openHotlist()
         self.start = time.time()
-        for row in self.rows:
+        while True:
             try:
-                self.processRow(row)
-                end = time.time()
-                if end - self.start > 600:
-                    raise Exception
+                while self.i < len(self.rows):
+                    self.processRow(self.rows[self.i])
+                    self.i += 1
+                    end = time.time()
+                    if end - self.start > 600:
+                        raise Exception
             except:
                 while True:
                     try:
-                        #self.driver_hotlist.quit()
+                        self.driver_hotlist.quit()
                         self.driver_hotlist = None
-                        self.driver_hotlist, self.rows = self.openHotlist()
+                        self.rows = self.openHotlist()
                         print(len(self.rows))
                         time.sleep(5)
                         self.start = time.time()
@@ -287,20 +290,17 @@ class HotlistProcessor(object):
                 break
         return Price(url, buy_price, sell_price, bot_name_buy, bot_name_sell, number)
 
-
-processeor = HotlistProcessor()
-#processeor.processHotlist()
-
+while True:
+    processeor = HotlistProcessor()
+    processeor.processHotlist()
+exit(0)
 new_pricelists = [#"https://www.mtggoldfish.com/index/DOM#online",
                   #"https://www.mtggoldfish.com/index/KLD#online",
                   #"https://www.mtggoldfish.com/index/AER#online",
-                  #"https://www.mtggoldfish.com/index/XLN#online",
-                  #"https://www.mtggoldfish.com/index/RIX#online",
-                  #"https://www.mtggoldfish.com/index/HOU#online",
-                  #"https://www.mtggoldfish.com/index/AKH#online"
-                  "https://www.mtggoldfish.com/index/BFZ#online",
-                  "https://www.mtggoldfish.com/index/SOI#online",
-                   "https://www.mtggoldfish.com/index/ROE#online"]
+                  "https://www.mtggoldfish.com/index/IN#online",
+                  "https://www.mtggoldfish.com/index/M11#online",
+                  "https://www.mtggoldfish.com/index/ARB#online",
+                  "https://www.mtggoldfish.com/index/TPR#online"]
 
 cards = []
 
@@ -331,6 +331,10 @@ for card in cards:
 
     if price.buy_price > price.sell_price + 0.05:
         print(card.name + " " + str(price))
+        cursor.execute("INSERT OR REPLACE INTO records VALUES(?,?,?,?,?,?,?,?,?)",
+                       [card.set + card.name, card.name, card.set, price.buy_price, price.sell_price, price.bot_name_sell,
+                        price.bot_name_buy, datetime.now(), min(4, price.number)])
+
     else:
         print("No" + card.name)
 
