@@ -24,7 +24,7 @@ tb_exists = "SELECT name FROM sqlite_master WHERE type='table' AND name='records
 
 if not con.execute(tb_exists).fetchone():
     c = cursor.execute("CREATE TABLE records(Id TEXT PRIMARY KEY, CardName TEXT, SetName TEXT, BuyPrice REAL, SellPrice REAL, "
-                "BotNameSeller TEXT, BotNameBuyer TEXT, Time TEXT, Number INT)")
+                "BotNameSeller TEXT, BotNameBuyer TEXT, Time TEXT, Number INT, Foil INT)")
 else:
     print("Table exists")
 
@@ -55,12 +55,14 @@ class Card:
     def __init__(self):
         self.name = ""
         self.set = ""
+        self.foil = False
         self.prices = []
 
-    def __init__(self, name, set, prices):
+    def __init__(self, name, set, prices, foil):
         self.name = name
         self.set = set
         self.prices = [prices]
+        self.foil = foil
 
     def AddPrice(self, price):
         self.prices.append(price)
@@ -86,12 +88,12 @@ class Card:
         str1 = ""
         for price in self.prices:
             str1 += str(price)
-        return self.name + "\t" + self.set + "\t" + str1 + "\t" + str(self.MaxBuyPrice() - self.MinSellPrice())
+        return self.name + "\t" + self.set + "\t" + str(self.foil) + "\t" + str1 + "\t" + str(self.MaxBuyPrice() - self.MinSellPrice())
 
 import platform
 
 if platform.system() == "Windows":
-    chromedriver_path = r"C:\Users\IEUser\Desktop\magic_bot\magic_bot\chromedriver.exe"
+    chromedriver_path = r"C:\Users\meles\PycharmProjects\magic_bot\chromedriver.exe"
 else:
     chromedriver_path = "/home/dmm2017/PycharmProjects/candle_factory/chromedriver"
 
@@ -113,7 +115,7 @@ driver_library.get("https://www.mtgowikiprice.com/")
 class HotlistProcessor(object):
 
     def __init__(self):
-        self.start_from = "1"
+        self.start_from = "BOO"
         self.set = "1"
         self.rows = []
         self.driver_hotlist = None
@@ -139,10 +141,6 @@ class HotlistProcessor(object):
 
 
 
-
-
-
-
     def processHotlist(self):
         self.rows = self.openHotlist()
         self.start = time.time()
@@ -154,7 +152,8 @@ class HotlistProcessor(object):
                     end = time.time()
                     if end - self.start > 600:
                         raise Exception
-            except:
+            except Exception as e:
+                print(str(e))
                 while True:
                     try:
                         self.driver_hotlist.quit()
@@ -177,21 +176,28 @@ class HotlistProcessor(object):
         price = float(columns[3].text)
         if setname < self.start_from:
             return
-        if cardname.endswith("*") or price < 0.05:
+        if price < 0.05:
             return
-
+        foil = cardname.endswith("*")
+        if foil:
+            cardname = cardname[:-7]
         print(setname + " " + cardname + " " + str(price))
         price_struct = Price("", price, 10000, "Hotlistbot3", "", 0)
-        card = Card(cardname, setname, price_struct)
-        p = self.ParseMtgolibrary(driver_library, card)
+        card = Card(cardname, setname, price_struct, foil)
+        p = None
+        if not foil:
+            p = self.ParseMtgolibrary(driver_library, card)
+        if foil:
+            p = self.ParseMtgolibraryFoil(driver_library, card)
+
         if not p:
             return
 
         if price - p.sell_price > 0.05 and p.sell_price != 10000:
             print("High diff: " + p.bot_name_sell + " " + str(price - p.sell_price))
-            cursor.execute("INSERT OR REPLACE INTO records VALUES(?,?,?,?,?,?,?,?,?)",
+            cursor.execute("INSERT OR REPLACE INTO records VALUES(?,?,?,?,?,?,?,?,?,?)",
                            [setname + cardname, cardname, setname, price, p.sell_price, p.bot_name_sell, "HotListBot3",
-                            datetime.now(), min(4, p.number)])
+                            datetime.now(), min(4, p.number), 1 if foil else 0])
     def get_symbol(self, img_src):
         if img_src in prices_d.keys():
             return prices_d[img_src]
@@ -202,17 +208,31 @@ class HotlistProcessor(object):
             pickle.dump(prices_d, open("obj/dict.pkl", "wb"))
             return symbol
 
-    def ParseMtgolibrary(self, driver, card, parse_buyers = False):
+    def ParseMtgolibraryFoil(self, driver, card, parse_buyers = False):
         setname = card.set.upper()
         if setname.startswith("BOO"):
             return False
+        setname, url, driver = self.MtgoLibraryGoToCard(driver, card)
+        try:
+            link = driver.find_element_by_link_text('View Foil')
+        except:
+            return False
+        link.click()
+        time.sleep(4)
+        return self.ParseMtgolibraryInternal(driver, card, url, parse_buyers)
+
+    def MtgoLibraryGoToCard(self, driver, card):
+        setname = card.set.upper()
         input_element = driver.find_element_by_id("_cardskeyword")
         input_element.clear()
         input_element.send_keys(card.name + " " + setname)
         driver.find_elements_by_css_selector("button")[1].click()
         url = driver.current_url
-        time.sleep(7)
+        return setname, url, driver
+
+    def ParseMtgolibraryInternal(self, driver, card, url, parse_buyers):
         bot_name = ""
+        setname = card.set
         number = 0
         elem = driver.find_elements_by_class_name("sell_row")
         buy_price = -1
@@ -289,6 +309,15 @@ class HotlistProcessor(object):
             if tickets > buy_price:
                 break
         return Price(url, buy_price, sell_price, bot_name_buy, bot_name_sell, number)
+
+
+    def ParseMtgolibrary(self, driver, card, parse_buyers = False):
+        setname = card.set.upper()
+        if setname.startswith("BOO"):
+            return False
+        setname, url, driver = self.MtgoLibraryGoToCard(driver, card)
+        time.sleep(7)
+        return self.ParseMtgolibraryInternal(driver, card, url, parse_buyers)
 
 while True:
     processeor = HotlistProcessor()
