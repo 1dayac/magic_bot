@@ -151,9 +151,9 @@ class HotlistProcessor(object):
                     self.i += 1
                     end = time.time()
                     if end - self.start > 600:
-                        raise Exception
-            except Exception as e:
-                print(str(e))
+                        raise E
+                break
+            except:
                 while True:
                     try:
                         self.driver_hotlist.quit()
