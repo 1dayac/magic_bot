@@ -16,10 +16,11 @@ class TradeStatus(Enum):
 
 
 trusted_sell_bots = ["MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MTGO_Megastore4", "MTGO_Megastore5", "HotListBot3","HotListBot2", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
-                 "Blacklotusbot", "Power9bot", "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1",
+                 "Blacklotusbot", "Power9bot", "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1", "The_MTGO_Bazaar_2",
                 "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot", "cardimaniaEMERALD",
-                "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTStorebot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
-                "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices"]
+                "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTSToreBot2", "VRTStorebot", "VRTSToreBot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
+                "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices", "Cheapest_Prices_2", "Cheapest_Prices_3",
+                     "Cheapest_Prices_4", "Vintage-Cardbot", "Vintage-Cardbot2"]
 
 trusted_buy_bots = ["HotListBot3", "HotListBot2", "Power9bot", "CalebDBot", "CalebDBot2", "botomagic", "staplesomagic", "SuperCardBot", "SuperCardBot2", "GarrukCardBot", "VRTStoreBuyBot"]
 
@@ -35,13 +36,13 @@ set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Exped
             "MMA" : "Modern Masters (2013 Edition)", "MM2" : "Modern Masters (2015 Edition)", "MM3" : "Modern Masters (2017 Edition)", "RTR" : "Return to Ravnica", "WWK" : "Worldwake", "ARB" : "Alara Reborn", "EVE" : "Eventide",
             "SHM" : "Shadowmoor", "10E" : "Tenth Edition", "9ED" : "Ninth Edition", "8ED" : "Eighth Edition", "7E" : "Seventh Edition", "LRW" : "Lorwyn",
             "PLC" : "Planar Chaos", "VMA" : "Vintage Masters",  "TSP" : "Time Spiral", "CSP" : "Coldsnap", "DIS" : "Dissension", "AP" : "Apocalypse",
-            "GPT" : "Guild Pact", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
+            "GPT" : "Guild Pact", "VI" : "Visions", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
             "ST" : "Stronghold", "TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey",
             "NE" : "Nemesis", "MM" : "Mercadian Masques", "THS" : "Theros", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
             "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
 			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City Of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
-            "ME4" : "Masters Edition IV", "ME3" : "Masters Edition III", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir"}
+            "ME4" : "Masters Edition IV", "ME3" : "Masters Edition III", "MED" : "Masters Edition I", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir", "TOR" : "Torment"}
 
 class Card:
     def __init__(self):
@@ -88,6 +89,11 @@ def go_to_rectangle(rect, sleep = 0):
     pyautogui.moveTo((rect.left + rect.right)/2, (rect.top + rect.bottom)/2)
     time.sleep(sleep)
 
+
+def double_click_multiple(window, times):
+    rect = window.rectangle()
+    for i in range(times):
+        double_click_rectangle(rect)
 
 def double_click_rectangle(rect, sleep = 0):
     pyautogui.click((rect.left + rect.right)/2, (rect.top + rect.bottom)/2, clicks=2, interval=0.1)
@@ -260,7 +266,7 @@ class MTGO_bot(object):
                 records = cursor.execute(command).fetchall()
             self.db_record = list(records[0])
 
-            while  self.db_record[5] not in trusted_sell_bots or self.db_record[6] not in trusted_buy_bots:
+            while  self.db_record[5] not in trusted_sell_bots or self.db_record[6] not in trusted_buy_bots or self.db_record[9]:
                 command = "DELETE FROM records WHERE Id = ?;"
                 cursor.execute(command, [self.db_record[0]]).fetchall()
                 command = "SELECT * FROM records ORDER BY RANDOM() LIMIT 1;"
@@ -279,6 +285,12 @@ class MTGO_bot(object):
                 self.db_record[5] = "VRTStoreBot2"
             if self.db_record[5] == "VRTStorebot":
                 self.db_record[5] = "VRTStoreBot"
+            if self.db_record[5] == "VRTSToreBot":
+                self.db_record[5] = "VRTStoreBot"
+            if self.db_record[5] == "VRTSToreBot2":
+                self.db_record[5] = "VRTStoreBot2"
+            if self.db_record[5] == "VRTSToreBot3":
+                self.db_record[5] = "VRTStoreBot3"
             if self.db_record[5] == "Manatraders_booster1":
                 self.db_record[5] = "ManaTraders_Booster1"
             if self.db_record[5] == "Manatraders_seller1":
@@ -297,11 +309,11 @@ class MTGO_bot(object):
             if not self.click_bot_trade(self.db_record[5]):
                 print("Bot is offline")
                 return
-            time.sleep(15)
+            time.sleep(8)
 
             while self.is_trade_cancelled():
                 self.click_bot_trade(self.db_record[5])
-                time.sleep(10)
+                time.sleep(5)
 
             if self.is_trade_stalled():
                 return
@@ -385,31 +397,29 @@ class MTGO_bot(object):
             self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[6] + "{ENTER}")
 
             self.click_bot_trade(self.db_record[6])
-            time.sleep(15)
+            time.sleep(8)
 
             while self.is_trade_cancelled():
                 self.switch_bot()
                 self.click_bot_trade(self.db_record[6])
-                time.sleep(10)
+                time.sleep(2)
 
             try:
-                app.top_window().window(title="Trade Canceled", found_index=1).rectangle()
+                self.app.top_window().window(title="Trade Canceled", found_index=1).rectangle()
                 return
             except:
                 pass
 
-            try:
-                self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("sell{ENTER}")
-            except:
-                return
-            self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("{ENTER}")
+            #try:
+            #    self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("sell{ENTER}")
+            #except:
+            #    return
+            #self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("{ENTER}")
 
             num_of_tix = get_tix_number(self.app, self.db_record[6])
             if num_of_tix != 0:
                 click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
-            for i in range(0, num_of_tix):
-                print("Click")
-                double_click_rectangle(self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
+            double_click_multiple(self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0), num_of_tix)
 
             click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
             time.sleep(5)
@@ -472,8 +482,7 @@ class MTGO_bot(object):
         self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
         time.sleep(0.5)
         try:
-            for i in range(0, int(self.db_record[8])):
-                double_click_rectangle(self.app.top_window().child_window(title_re="Item: Card", found_index = 0).rectangle())
+            double_click_multiple(self.app.top_window().child_window(title_re="Item: Card", found_index = 0), int(self.db_record[8]))
         except:
             pass
 
