@@ -20,7 +20,7 @@ trusted_sell_bots = ["MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MT
                 "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot", "cardimaniaEMERALD",
                 "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTSToreBot2", "VRTStorebot", "VRTSToreBot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
                 "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices", "Cheapest_Prices_2", "Cheapest_Prices_3",
-                     "Cheapest_Prices_4", "Vintage-Cardbot", "Vintage-Cardbot2"]
+                     "Cheapest_Prices_4", "Vintage-Cardbot", "Vintage-Cardbot2", "__BOT__Platinum"]
 
 trusted_buy_bots = ["HotListBot3", "HotListBot2", "Power9bot", "CalebDBot", "CalebDBot2", "botomagic", "staplesomagic", "SuperCardBot", "SuperCardBot2", "GarrukCardBot", "VRTStoreBuyBot"]
 
@@ -419,7 +419,7 @@ class MTGO_bot(object):
             num_of_tix = get_tix_number(self.app, self.db_record[6])
             if num_of_tix != 0:
                 click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
-            double_click_multiple(self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0), num_of_tix)
+                double_click_multiple(self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0), num_of_tix)
 
             click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
             time.sleep(5)
@@ -465,6 +465,7 @@ class MTGO_bot(object):
                 pass
         except:
             print("Unexpected error:", sys.exc_info()[0])
+            print("Unexpected error:", sys.exc_info()[1])
             self.trade_status = TradeStatus.BIG_FAILURE
 
     def update_binder_after_buy(self):

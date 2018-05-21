@@ -50,6 +50,8 @@ class Price:
         return str(self.buy_price) + "\t" + self.bot_name_buy + "\t" + str(self.sell_price) + "\t" + self.bot_name_sell +"\t"
 
 
+def is_basic_land(card):
+    return card.name == "Swamp" or card.name == "Island" or card.name == "Mountain" or card.name == "Plains" or card.name == "Forest"
 
 class Card:
     def __init__(self):
@@ -93,7 +95,7 @@ class Card:
 import platform
 
 if platform.system() == "Windows":
-    chromedriver_path = r"C:\Users\meles\PycharmProjects\magic_bot\chromedriver.exe"
+    chromedriver_path = r"C:\Users\IEUser\Desktop\magic_bot\magic_bot\chromedriver.exe"
 else:
     chromedriver_path = "/home/dmm2017/PycharmProjects/candle_factory/chromedriver"
 
@@ -115,7 +117,7 @@ driver_library.get("https://www.mtgowikiprice.com/")
 class HotlistProcessor(object):
 
     def __init__(self):
-        self.start_from = "BOO"
+        self.start_from = "1"
         self.set = "1"
         self.rows = []
         self.driver_hotlist = None
@@ -151,9 +153,10 @@ class HotlistProcessor(object):
                     self.i += 1
                     end = time.time()
                     if end - self.start > 600:
-                        raise E
+                        raise Exception
                 break
             except:
+                print(sys.exc_info()[1])
                 while True:
                     try:
                         self.driver_hotlist.quit()
@@ -173,6 +176,7 @@ class HotlistProcessor(object):
         setname = columns[0].text
         self.set = setname
         cardname = columns[1].text
+
         price = float(columns[3].text)
         if setname < self.start_from:
             return
@@ -181,9 +185,12 @@ class HotlistProcessor(object):
         foil = cardname.endswith("*")
         if foil:
             cardname = cardname[:-7]
+
         print(setname + " " + cardname + " " + str(price))
         price_struct = Price("", price, 10000, "Hotlistbot3", "", 0)
         card = Card(cardname, setname, price_struct, foil)
+        if is_basic_land(card):
+            return
         p = None
         if not foil:
             p = self.ParseMtgolibrary(driver_library, card)
@@ -210,7 +217,7 @@ class HotlistProcessor(object):
 
     def ParseMtgolibraryFoil(self, driver, card, parse_buyers = False):
         setname = card.set.upper()
-        if setname.startswith("BOO"):
+        if setname.startswith("BOO") or setname.startswith("PRM"):
             return False
         setname, url, driver = self.MtgoLibraryGoToCard(driver, card)
         try:
