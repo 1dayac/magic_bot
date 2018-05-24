@@ -6,6 +6,7 @@ import sys
 import os
 from enum import Enum
 import math
+import traceback
 
 class TradeStatus(Enum):
     SUCCESS = 1
@@ -17,7 +18,7 @@ class TradeStatus(Enum):
 
 trusted_sell_bots = ["MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MTGO_Megastore4", "MTGO_Megastore5", "HotListBot3","HotListBot2", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
                  "Blacklotusbot", "Power9bot", "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1", "The_MTGO_Bazaar_2",
-                "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot", "cardimaniaEMERALD",
+                "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot",
                 "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTSToreBot2", "VRTStorebot", "VRTSToreBot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
                 "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices", "Cheapest_Prices_2", "Cheapest_Prices_3",
                      "Cheapest_Prices_4", "Vintage-Cardbot", "Vintage-Cardbot2", "__BOT__Platinum"]
@@ -42,7 +43,7 @@ set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Exped
             "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
 			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City Of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
-            "ME4" : "Masters Edition IV", "ME3" : "Masters Edition III", "MED" : "Masters Edition I", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir", "TOR" : "Torment"}
+            "ME4" : "Masters Edition IV", "ME3" : "Masters Edition III", "MED" : "Masters Edition I", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir", "TOR" : "Torment", "TSB" : "Time Spiral Timeshifted"}
 
 class Card:
     def __init__(self):
@@ -215,6 +216,8 @@ class MTGO_bot(object):
 
     def switch_bot(self):
         if self.db_record[6] == "HotListBot3":
+            self.db_record[6] = "HotListBot4"
+        elif self.db_record[6] == "HotListBot4":
             self.db_record[6] = "HotListBot2"
         elif self.db_record[6] == "HotListBot2":
             self.db_record[6] = "HotListBot3"
@@ -303,6 +306,9 @@ class MTGO_bot(object):
                 self.db_record[5] = "ManaTraders_Seller4"
             if self.db_record[5] == "Manatraders_seller5":
                 self.db_record[5] = "ManaTraders_Seller5"
+            if self.db_record[5] == "Vintage-Cardbot2":
+                self.db_record[5] = "Vintage-cardbot2"
+
             click_trade(self.app)
             self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
 
@@ -330,6 +336,8 @@ class MTGO_bot(object):
             click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
             click_rectangle(self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
             time.sleep(0.5)
+            print(4)
+
             try:
                 for i in range(0, int(self.db_record[8])):
                     double_click_rectangle(self.app.top_window().child_window(title_re="Item: Card", found_index = 0).rectangle())
@@ -337,6 +345,7 @@ class MTGO_bot(object):
                 self.trade_status = TradeStatus.BIG_FAILURE
                 return
                 double_click_rectangle(self.app.top_window().window(auto_id="CollectionLayoutView", found_index = 0).rectangle())
+            print(5)
 
             time.sleep(2)
             click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
@@ -345,24 +354,27 @@ class MTGO_bot(object):
                 click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
             except:
                 pass
+            print(6)
             time.sleep(1)
+            index = 0
             while True:
-                index = 0
                 try:
                     index += 1
                     click_rectangle(self.app.top_window().window(title="Confirm Trade", found_index=1).rectangle())
                     break
                 except:
                     time.sleep(1)
-                    if index == 10:
+                    if index >= 10:
                         self.trade_status = TradeStatus.BIG_FAILURE
                         return
                     pass
             print(4)
             close_chat(self.app)
             print(5)
+            index = 0
             while True:
                 try:
+                    index += 1
                     time.sleep(2)
                     click_rectangle(self.app.top_window().window(title="Added to your Collection:", found_index = 0).window(auto_id="TitleBarCloseButton").rectangle())
                     break
@@ -371,6 +383,9 @@ class MTGO_bot(object):
                         click_rectangle(self.app.top_window().window(auto_id="OkButton", found_index=0).rectangle())
                         break
                     except:
+                        if index >= 20:
+                            self.trade_status = TradeStatus.BIG_FAILURE
+                            return
                         pass
 
             command = "DELETE FROM records WHERE Id = ?;"
@@ -378,6 +393,7 @@ class MTGO_bot(object):
             self.trade_status = TradeStatus.SUCCESS
         except:
             print("Unexpected error:", sys.exc_info()[0])
+            traceback.print_exc(file=sys.stdout)
             command = "DELETE FROM records WHERE Id = ?;"
             cursor.execute(command, [self.db_record[0]]).fetchall()
             self.trade_status = TradeStatus.BIG_FAILURE
@@ -462,10 +478,14 @@ class MTGO_bot(object):
                 click_rectangle(self.app.top_window().window(title="Cancel Trade", found_index=0).rectangle())
                 close_chat(self.app)
             except:
+                print(sys.exc_info()[0])
+                print(sys.exc_info()[1])
+                traceback.print_exc(file=sys.stdout)
                 pass
         except:
             print("Unexpected error:", sys.exc_info()[0])
             print("Unexpected error:", sys.exc_info()[1])
+            traceback.print_exc(file=sys.stdout)
             self.trade_status = TradeStatus.BIG_FAILURE
 
     def update_binder_after_buy(self):
@@ -483,7 +503,7 @@ class MTGO_bot(object):
         self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
         time.sleep(0.5)
         try:
-            double_click_multiple(self.app.top_window().child_window(title_re="Item: Card", found_index = 0), int(self.db_record[8]))
+            double_click_multiple(self.app.top_window().child_window(title_re="Item: Card", found_index = 0), int(self.db_record[8]) + 1)
         except:
             pass
 
@@ -501,7 +521,7 @@ class MTGO_bot(object):
             try:
                 click_rectangle(self.app.top_window().child_window(title_re="Add 1 to", found_index=0).rectangle())
             except:
-                pyautogui.moveRel(130, 30)
+                pyautogui.moveRel(-10, 0)
                 pyautogui.click()
                 pass
 

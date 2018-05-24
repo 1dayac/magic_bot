@@ -320,7 +320,7 @@ class HotlistProcessor(object):
 
     def ParseMtgolibrary(self, driver, card, parse_buyers = False):
         setname = card.set.upper()
-        if setname.startswith("BOO"):
+        if setname.startswith("BOO") or setname.startswith("PRM"):
             return False
         setname, url, driver = self.MtgoLibraryGoToCard(driver, card)
         time.sleep(7)
