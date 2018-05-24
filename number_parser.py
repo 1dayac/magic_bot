@@ -1,5 +1,17 @@
 import pickle
 import sys
+import queue
+from card import Card, Price
+
+class QueueWithMaxCapacity(object):
+    def __init__(self, capacity = 100):
+        self.limit = capacity
+        self.queue = queue.Queue()
+
+    def add(self, item):
+        if self.queue.size() > self.limit:
+            self.queue.get()
+        self.queue.add(item)
 
 class DigitsClassifier(object):
 
@@ -9,6 +21,7 @@ class DigitsClassifier(object):
             self.prices_d = pickle.loads(f.read())
         except:
             self.prices_d = {}
+        self.old_prices = QueueWithMaxCapacity(100)
 
     def get_symbol(self, img_src):
         if img_src in self.prices_d.keys():
@@ -20,7 +33,7 @@ class DigitsClassifier(object):
             pickle.dump(self.prices_d, open("obj/dict.pkl", "wb"))
             return symbol
 
-    def get_price(self, e):
+    def get_price(self, e, card, bot_name):
         find_sell_price = False
         if len(e.find_elements_by_class_name("sell_price_round")):
             find_sell_price = True
