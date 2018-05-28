@@ -5,8 +5,8 @@ import time
 import sys
 from datetime import datetime
 import re
-from number_parser import DigitsClassifier
-from card import Card, Price
+from magic_bot.number_parser import DigitsClassifier
+from magic_bot.card import Card, Price
 
 import sqlite3
 con = sqlite3.connect('cards.db', isolation_level=None)
@@ -20,7 +20,7 @@ else:
     print("Table exists")
 
 def is_basic_land(card):
-    return card.name == "Swamp" or card.name == "Island" or card.name == "Mountain" or card.name == "Plains" or card.name == "Forest"
+    return card.name == "Swamp" or card.name == "Island" or card.name == "Mountain" or card.name == "Plains" or card.name == "Forest" or card.name.startswith("Urza's")
 
 
 import platform
@@ -68,8 +68,8 @@ class HotlistProcessor(object):
         return rows
 
 
-    def get_price(self, e, card, bot_name):
-        return self.digit_clasiffier.get_price(e, card, bot_name)
+    def get_price(self, e, botname, card):
+        return self.digit_clasiffier.get_price(e, botname, card)
 
     def processHotlist(self):
         self.rows = self.openHotlist()
@@ -180,7 +180,7 @@ class HotlistProcessor(object):
                 first = False
             except:
                 continue
-            sell_price = self.get_price(e, card, bot_name_sell)
+            sell_price = self.get_price(e, bot_name_sell, card)
             break
         if not parse_buyers:
             return Price(url, 0, sell_price, "", bot_name_sell, number)
@@ -203,7 +203,7 @@ class HotlistProcessor(object):
                 tickets = float(re.split("[+\-]", e.find_elements_by_class_name("tickets")[0].get_attribute('textContent').strip())[0])
             except:
                 continue
-            buy_price = self.get_price(e, card, bot_name_buy)
+            buy_price = self.get_price(e, bot_name_buy, card)
             if tickets > buy_price:
                 break
         return Price(url, buy_price, sell_price, bot_name_buy, bot_name_sell, number)
@@ -218,5 +218,9 @@ class HotlistProcessor(object):
         return self.ParseMtgolibraryInternal(driver, card, url, parse_buyers)
 
 while True:
-    processeor = HotlistProcessor()
-    processeor.processHotlist()
+
+    try:
+        processeor = HotlistProcessor()
+        processeor.processHotlist()
+    except:
+        pass

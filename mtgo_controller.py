@@ -21,7 +21,7 @@ trusted_sell_bots = ["MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MT
                 "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot",
                 "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTSToreBot2", "VRTStorebot", "VRTSToreBot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
                 "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices", "Cheapest_Prices_2", "Cheapest_Prices_3",
-                     "Cheapest_Prices_4", "Vintage-Cardbot", "Vintage-Cardbot2", "__BOT__Platinum"]
+                     "Cheapest_Prices_4", "Cheapest_Prices_5", "Vintage-Cardbot", "Vintage-Cardbot2", "__BOT__Platinum",  "Low_Price1", "Low_Price4", "Low_Price", "ElfMomCorp"]
 
 trusted_buy_bots = ["HotListBot3", "HotListBot2", "Power9bot", "CalebDBot", "CalebDBot2", "botomagic", "staplesomagic", "SuperCardBot", "SuperCardBot2", "GarrukCardBot", "VRTStoreBuyBot"]
 
@@ -42,8 +42,8 @@ set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Exped
             "NE" : "Nemesis", "MM" : "Mercadian Masques", "THS" : "Theros", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
             "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
-			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City Of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
-            "ME4" : "Masters Edition IV", "ME3" : "Masters Edition III", "MED" : "Masters Edition I", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir", "TOR" : "Torment", "TSB" : "Time Spiral Timeshifted"}
+			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
+            "ME4" : "Masters Edition IV", "ME2" : "Masters Edition II", "ME3" : "Masters Edition III", "MED" : "Masters Edition I", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir", "TOR" : "Torment", "TSB" : "Time Spiral Timeshifted"}
 
 class Card:
     def __init__(self):
@@ -209,10 +209,36 @@ class MTGO_bot(object):
             time.sleep(10)
             click_trade(self.app)
             time.sleep(10)
-            click_collection(self.app)
-            click_rectangle(self.app.top_window().window(title="ABinder", found_index=0).rectangle())
+
         except:
             pass
+        try:
+            click_collection(self.app)
+            click_rectangle(self.app.top_window().window(title="ABinder", found_index=0).rectangle())
+            click_collection(self.app)
+        except:
+            pass
+        while True:
+            try:
+                rect = self.app.top_window().child_window(auto_id="DeckPane").child_window(title_re="Item: CardSlot:",
+                                                                                           found_index=0).rectangle()
+                right_click_rectangle(rect)
+                click_rectangle(self.app.top_window().child_window(title_re="Remove All", found_index=0).rectangle())
+            except:
+                break
+        click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
+        self.app.top_window().window(auto_id="searchTextBox").type_keys("event{SPACE}tickets{ENTER}")
+        right_click_rectangle(
+            self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
+        try:
+            click_rectangle(self.app.top_window().child_window(title_re="Add All to", found_index=0).rectangle())
+        except:
+            try:
+                click_rectangle(self.app.top_window().child_window(title_re="Add 1 to", found_index=0).rectangle())
+            except:
+                pyautogui.moveRel(-10, 0)
+                pyautogui.click()
+                pass
 
     def switch_bot(self):
         if self.db_record[6] == "HotListBot3":
@@ -339,12 +365,10 @@ class MTGO_bot(object):
             print(4)
 
             try:
-                for i in range(0, int(self.db_record[8])):
-                    double_click_rectangle(self.app.top_window().child_window(title_re="Item: Card", found_index = 0).rectangle())
+                double_click_multiple(self.app.top_window().child_window(title_re="Item: Card", found_index = 0),  int(self.db_record[8]))
             except:
                 self.trade_status = TradeStatus.BIG_FAILURE
                 return
-                double_click_rectangle(self.app.top_window().window(auto_id="CollectionLayoutView", found_index = 0).rectangle())
             print(5)
 
             time.sleep(2)
@@ -527,36 +551,38 @@ class MTGO_bot(object):
 
     def close(self):
         pass
+while True:
+    try:
+        my_bot = MTGO_bot()
+        my_MTGO_bot_Machine = Machine(model=my_bot, states=states_my, transitions=transitions, initial='initial')
+        print(my_bot.state)
 
-my_bot = MTGO_bot()
-my_MTGO_bot_Machine = Machine(model=my_bot, states=states_my, transitions=transitions, initial='initial')
-print(my_bot.state)
-
-my_bot.go_to_login()
-while (True):
-    while True:
-        if my_bot.trade_status == TradeStatus.SUCCESS:
-            break
-        if my_bot.trade_status == TradeStatus.NONE or my_bot.trade_status == TradeStatus.BOT_OFFLINE:
-            my_bot.go_to_buy()
-        if my_bot.trade_status == TradeStatus.BIG_FAILURE:
-            my_bot.go_to_restart()
-            my_bot.__init__()
-            my_bot.go_to_login()
-            my_bot.go_to_buy()
-
-    my_bot.go_to_update()
-
-    if my_bot.trade_status == TradeStatus.NONE or my_bot.trade_status == TradeStatus.BOT_OFFLINE:
-        my_bot.go_to_sell()
-
-    if my_bot.trade_status == TradeStatus.BIG_FAILURE:
-        my_bot.go_to_restart()
-        my_bot.__init__()
         my_bot.go_to_login()
-        continue
+        while True:
+            while True:
+                if my_bot.trade_status == TradeStatus.SUCCESS:
+                    break
+                if my_bot.trade_status == TradeStatus.NONE or my_bot.trade_status == TradeStatus.BOT_OFFLINE:
+                    my_bot.go_to_buy()
+                if my_bot.trade_status == TradeStatus.BIG_FAILURE:
+                    my_bot.go_to_restart()
+                    my_bot.__init__()
+                    my_bot.go_to_login()
+                    my_bot.go_to_buy()
 
-    my_bot.go_to_update()
+            my_bot.go_to_update()
 
+            if my_bot.trade_status == TradeStatus.NONE or my_bot.trade_status == TradeStatus.BOT_OFFLINE:
+                my_bot.go_to_sell()
+
+            if my_bot.trade_status == TradeStatus.BIG_FAILURE:
+                my_bot.go_to_restart()
+                my_bot.__init__()
+                my_bot.go_to_login()
+                continue
+
+            my_bot.go_to_update()
+    except:
+        pass
 #app = Application(backend="uia").start("notepad.exe")
 
