@@ -16,8 +16,8 @@ class TradeStatus(Enum):
     NONE = 5
 
 
-trusted_sell_bots = ["MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MTGO_Megastore4", "MTGO_Megastore5", "HotListBot3","HotListBot2", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
-                 "Blacklotusbot", "Power9bot", "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1", "The_MTGO_Bazaar_2",
+trusted_sell_bots = ["treasurecruise2", "MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MTGO_Megastore4", "MTGO_Megastore5", "HotListBot3","HotListBot2", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
+                 "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1", "The_MTGO_Bazaar_2",
                 "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot",
                 "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTSToreBot2", "VRTStorebot", "VRTSToreBot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
                 "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices", "Cheapest_Prices_2", "Cheapest_Prices_3",
@@ -185,7 +185,7 @@ class MTGO_bot(object):
             self.db_record = ""
             self.trade_status = TradeStatus.NONE
         except:
-            subprocess.Popen(['cmd.exe', '/c', r'C:\Users\IEUser\Desktop\mtgo.appref-ms'])
+            subprocess.Popen(['cmd.exe', '/c', r'C:\Users\dmm2017\Desktop\mtgo.appref-ms'])
             time.sleep(5)
             self.app = Application(backend="uia").connect(path='MTGO.exe')
             self.db_record = ""
@@ -226,10 +226,17 @@ class MTGO_bot(object):
                 click_rectangle(self.app.top_window().child_window(title_re="Remove All", found_index=0).rectangle())
             except:
                 break
-        click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
-        self.app.top_window().window(auto_id="searchTextBox").type_keys("event{SPACE}tickets{ENTER}")
-        right_click_rectangle(
-            self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
+        try:
+
+            click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
+            self.app.top_window().window(auto_id="searchTextBox").type_keys("event{SPACE}tickets{ENTER}")
+            right_click_rectangle(
+                self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
+        except:
+            self.close_mtgo()
+            self.trade_status = TradeStatus.BIG_FAILURE
+
+
         try:
             click_rectangle(self.app.top_window().child_window(title_re="Add All to", found_index=0).rectangle())
         except:
@@ -279,6 +286,28 @@ class MTGO_bot(object):
             return True
         except:
             return False
+
+    def get_tix_number_buy(self):
+        try:
+            import io
+            import sys
+            stringio = io.StringIO()
+            previous_stdout = sys.stdout
+            sys.stdout = stringio
+            self.app.top_window().window(auto_id="ChatItemsControl").print_control_identifiers()
+            sys.stdout = previous_stdout
+            string = stringio.getvalue()
+            pos = string.rfind("YOU RECEIVE ")
+            pos1 = string.find("(", pos)
+            pos2 = string.find(")", pos)
+            if " " in string[pos1:pos2]:
+                pos1 = string.find(" ", pos1)
+
+            print(string[pos1 + 1: pos2])
+            price = float(string[pos1 + 1: pos2])
+            return price
+        except:
+            return None
 
     def buy_card(self):
         end = time.time()
@@ -334,12 +363,15 @@ class MTGO_bot(object):
                 self.db_record[5] = "ManaTraders_Seller5"
             if self.db_record[5] == "Vintage-Cardbot2":
                 self.db_record[5] = "Vintage-cardbot2"
-
-            click_trade(self.app)
-            self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
+            try:
+                click_trade(self.app)
+                self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
+            except:
+                return
 
             if not self.click_bot_trade(self.db_record[5]):
                 print("Bot is offline")
+                self.is_trade_cancelled()
                 return
             time.sleep(8)
 
@@ -370,10 +402,18 @@ class MTGO_bot(object):
                 self.trade_status = TradeStatus.BIG_FAILURE
                 return
             print(5)
+            time.sleep(8)
+            price = self.get_tix_number_buy()
+            if price is not None and price > float(self.db_record[3]):
+                command = "DELETE FROM records WHERE Id = ?;"
+                cursor.execute(command, [self.db_record[0]]).fetchall()
+                self.trade_status = TradeStatus.BIG_FAILURE
+                return
+
 
             time.sleep(2)
             click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
-            time.sleep(10)
+            time.sleep(5)
             try:
                 click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
             except:
@@ -527,7 +567,7 @@ class MTGO_bot(object):
         self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
         time.sleep(0.5)
         try:
-            double_click_multiple(self.app.top_window().child_window(title_re="Item: Card", found_index = 0), int(self.db_record[8]) + 1)
+            double_click_multiple(self.app.top_window().child_window(auto_id="CollectionLayoutView").child_window(title_re="Item: Card", found_index = 0), int(self.db_record[8]))
         except:
             pass
 
@@ -538,7 +578,7 @@ class MTGO_bot(object):
         time.sleep(1)
         click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
         self.app.top_window().window(auto_id="searchTextBox").type_keys("event{SPACE}tickets{ENTER}")
-        right_click_rectangle(self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
+        right_click_rectangle(self.app.top_window().child_window(auto_id="CollectionLayoutView").child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
         try:
             click_rectangle(self.app.top_window().child_window(title_re="Add All to", found_index=0).rectangle())
         except:

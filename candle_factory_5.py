@@ -5,8 +5,8 @@ import time
 import sys
 from datetime import datetime
 import re
-from magic_bot.number_parser import DigitsClassifier
-from magic_bot.card import Card, Price
+from number_parser import DigitsClassifier
+from card import Card, Price
 
 import sqlite3
 con = sqlite3.connect('cards.db', isolation_level=None)
@@ -26,14 +26,14 @@ def is_basic_land(card):
 import platform
 
 if platform.system() == "Windows":
-    chromedriver_path = r"C:\Users\IEUser\Desktop\magic_bot\magic_bot\chromedriver.exe"
+    chromedriver_path = r"C:\Users\dmm2017\Desktop\magic_bot\chromedriver.exe"
 else:
     chromedriver_path = "/home/dmm2017/PycharmProjects/candle_factory/chromedriver"
 
 option = webdriver.ChromeOptions()
 
 chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--headless")
+#chrome_options.add_argument("--headless")
 driver_library = webdriver.Chrome(chromedriver_path, options= chrome_options)
 driver_library.get("https://www.mtgowikiprice.com/")
 
@@ -53,7 +53,7 @@ class HotlistProcessor(object):
     def openHotlist(self):
         url = "http://www.mtgotraders.com/hotlist/#/"
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--headless")
+        #chrome_options.add_argument("--headless")
         self.driver_hotlist = webdriver.Chrome(chromedriver_path, options = chrome_options)
         self.driver_hotlist.get(url)
         time.sleep(4)
