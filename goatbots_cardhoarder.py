@@ -3,7 +3,7 @@ import sqlite3
 import datetime
 from card import Card, Price
 
-chromedriver_path = r"C:\Users\meles\PycharmProjects\magic_bot\chromedriver.exe"
+chromedriver_path = r"C:\Users\dmm2017\Desktop\magic_bot\chromedriver.exe"
 
 class TopLevelProcessor(object):
 
@@ -59,7 +59,7 @@ class GoatBotsParser(object):
         self.main_url = "https://www.goatbots.com/prices"
         option = webdriver.ChromeOptions()
         chrome_options = webdriver.ChromeOptions()
-        #chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(chromedriver_path, options= chrome_options)
         self.second_driver = webdriver.Chrome(chromedriver_path, options= chrome_options)
         self.current_set = None
@@ -100,7 +100,7 @@ class GoatBotsParser(object):
         self.driver.get(self.main_url)
         sets = self.driver.find_elements_by_class_name('cardset')
         refs = []
-        max_iter = 20
+        max_iter = 200
         current_iter = 0
         for set in sets:
             current_iter += 1
@@ -116,8 +116,6 @@ class GoatBotsParser(object):
 
         for ref in refs:
             current_ref += 1
-            if current_ref < 6:
-                continue
             print("Processing " + ref)
             max_cards = 20
             current = 0
@@ -142,7 +140,7 @@ class CardHoarderParser(object):
         self.main_url = "https://www.cardhoarder.com/cards"
         option = webdriver.ChromeOptions()
         chrome_options = webdriver.ChromeOptions()
-        #chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(chromedriver_path, options= chrome_options)
         self.driver.get(self.main_url)
 
