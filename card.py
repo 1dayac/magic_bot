@@ -59,3 +59,23 @@ class Card:
         for price in self.prices:
             str1 += str(price)
         return self.name + "\t" + self.set + "\t" + str(self.foil) + "\t" + str1 + "\t" + str(self.MaxBuyPrice() - self.MinSellPrice())
+
+    def BestSellPrice(self):
+        best_price = None
+        for price in self.prices:
+            if best_price == None:
+                best_price = price
+            elif price.sell_price < best_price.sell_price:
+                best_price = price
+        return best_price
+
+
+    def BestBuyPrice(self):
+        best_price = None
+        for price in self.prices:
+            if best_price == None:
+                best_price = price
+            elif price.buy_price > best_price.buy_price:
+                best_price = price
+        return best_price
+
