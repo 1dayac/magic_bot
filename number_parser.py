@@ -4,18 +4,7 @@ import queue
 from card import Card, Price
 from selenium import webdriver
 import time
-
-
-
-class QueueWithMaxCapacity(object):
-    def __init__(self, capacity = 100):
-        self.limit = capacity
-        self.queue = queue.Queue()
-
-    def add(self, item):
-        if self.queue.qsize() > self.limit:
-            self.queue.get()
-        self.queue.put(item)
+from queue_with_capacity import QueueWithMaxCapacity
 
 import platform
 if platform.system() == "Windows":

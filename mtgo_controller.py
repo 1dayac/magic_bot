@@ -7,6 +7,8 @@ import os
 from enum import Enum
 import math
 import traceback
+from trusted_bots import *
+pyautogui.FAILSAFE = False
 
 class TradeStatus(Enum):
     SUCCESS = 1
@@ -15,15 +17,15 @@ class TradeStatus(Enum):
     BIG_FAILURE = 4
     NONE = 5
 
+import win32api, win32con, win32process
+def setaffinity():
+    pid  = win32api.GetCurrentProcessId()
+    mask = 5 # core 7
+    handle = win32api.OpenProcess(win32con.PROCESS_ALL_ACCESS, True, pid)
+    win32process.SetProcessAffinityMask(handle, mask)
+#setaffinity()
 
-trusted_sell_bots = ["treasurecruise2", "MTGO_Megastore2", "MTGO_Megastore", "MTGO_Megastore3", "MTGO_Megastore4", "MTGO_Megastore5", "HotListBot3","HotListBot2", "JaceCardBot", "AjaniCardBot", "GarrukCardBot", "SuperCardBot2", "ManaTraders_Seller3", "ManaTraders_Seller2", "Manatraders_seller3", "Manatraders_seller2",
-                 "SuperCardBot", "SuperCardBot2", "Applegrove", "CalebDBot", "CalebDBot2", "The_MTGO_Bazaar_1", "The_MTGO_Bazaar_2",
-                "MagicCardMarket2", "MagicCardMarket", "MagicCardMarketFoil", "Manatraders_seller1", "botomagic", "staplesomagic", "VRTStoreBuyBot",
-                "MTGOCardMarket", "MTGOCardMarket1","MTGOCardMarket2", "VRTStorebot3", "VRTStorebot2", "VRTSToreBot2", "VRTStorebot", "VRTSToreBot", "Manatraders_booster1", "ManaTraders_Seller1", "Manatraders_seller1",
-                "11101969a", "11101969b", "ManaTraders_Seller4", "Manatraders_seller4", "ManaTraders_Seller5", "Manatraders_seller5", "Cheapest_Prices_1", "Cheapest_Prices", "Cheapest_Prices_2", "Cheapest_Prices_3",
-                     "Cheapest_Prices_4", "Cheapest_Prices_5", "Vintage-Cardbot", "Vintage-Cardbot2", "__BOT__Platinum",  "Low_Price1", "Low_Price4", "Low_Price", "ElfMomCorp"]
 
-trusted_buy_bots = ["HotListBot3", "HotListBot2", "Power9bot", "CalebDBot", "CalebDBot2", "botomagic", "staplesomagic", "SuperCardBot", "SuperCardBot2", "GarrukCardBot", "VRTStoreBuyBot"]
 
 class NoConfirmTradeException(Exception):
     pass
@@ -40,10 +42,10 @@ set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Exped
             "GPT" : "Guild Pact", "VI" : "Visions", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
             "ST" : "Stronghold", "TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey",
             "NE" : "Nemesis", "MM" : "Mercadian Masques", "THS" : "Theros", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
-            "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "C14" : "Commander 2014",
+            "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "M19" : "Core Set 2019", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
 			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
-            "ME4" : "Masters Edition IV", "ME2" : "Masters Edition II", "ME3" : "Masters Edition III", "MED" : "Masters Edition I", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir", "TOR" : "Torment", "TSB" : "Time Spiral Timeshifted"}
+            "ME4" : "Masters Edition IV", "ME2" : "Masters Edition II", "PR": "Prophecy", "ME3" : "Masters Edition III", "MED" : "Masters Edition I", "IN" : "Invasion", "BNG" : "Born of the Gods", "KTK" : "Khans of Tarkir", "TOR" : "Torment", "TSB" : "Time Spiral Timeshifted"}
 
 class Card:
     def __init__(self):
@@ -109,19 +111,23 @@ def right_click_rectangle(rect, sleep = 0):
     time.sleep(sleep)
 
 def click_collection(app):
-    click_rectangle(app.top_window().window(auto_id="CollectionButton").rectangle(), 5)
+    click_rectangle(app['Magic: The Gathering Online'].window(auto_id="CollectionButton").rectangle(), 5)
 
 def click_trade(app):
-    click_rectangle(app.top_window().window(auto_id="TradeButton", found_index = 0).rectangle(), 5)
+    click_rectangle(app['Magic: The Gathering Online'].window(auto_id="TradeButton", found_index = 0).rectangle(), 5)
 
 def click_ok_button(app):
     click_rectangle(app.top_window().window(auto_id="OkButton").rectangle(), 5)
 
 def close_chat(app):
+    index = 0
     while True:
+        index += 1
         try:
+            if index == 100:
+                break
             print("Try to close chat")
-            click_rectangle(app.top_window().window(auto_id="CloseButtom", found_index=0).rectangle())
+            click_rectangle(app['Magic: The Gathering Online'].window(auto_id="CloseButtom", found_index=0).rectangle())
             time.sleep(1)
             break
         except:
@@ -137,14 +143,14 @@ def get_tix_number(app, botname):
     sys.stdout = previous_stdout
     string = stringio.getvalue()
     num_of_tix = 0
-    if botname.startswith("Hot"):
+    if botname.startswith("Hot") or botname.startswith("CardBuy"):
         pos = string.rfind("Take")
         pos1 = string.find(" ", pos + 1) + 1
         pos2 = string.find(" ", pos1)
         num_of_tix = int(string[pos1: pos2])
         print("Taking " + str(num_of_tix) + " tix")
     else:
-        pos = string.rfind("Please take up to")
+        pos = string.rfind("take")
         pos1 = string.find(" ", pos + 1) + 1
         pos2 = string.find(" ", pos1)
         num_of_tix = math.floor(float(string[pos1: pos2]))
@@ -177,9 +183,10 @@ transitions = [
 import subprocess, time
 
 start = time.time()
-
+from queue_with_capacity import QueueWithMaxCapacity
 class MTGO_bot(object):
     def __init__(self):
+        self.last_trades = QueueWithMaxCapacity(10)
         try:
             self.app = Application(backend="uia").connect(path='MTGO.exe')
             self.db_record = ""
@@ -197,14 +204,24 @@ class MTGO_bot(object):
 
     def login(self):
         print("Starting...")
+        self.last_trades = QueueWithMaxCapacity(10)
         try:
-            self.app.top_window().window(auto_id="UsernameTextBox").type_keys("VerzillaBot")
-            self.app.top_window().window(auto_id="PasswordBox").type_keys("Lastborn220")
+            click_rectangle(self.app.top_window().child_window(auto_id = "CloseButton").rectangle())
+        except:
+            pass
+        try:
+            self.app['Magic: The Gathering Online'].window(auto_id="UsernameTextBox").type_keys("Weill")
+            self.app['Magic: The Gathering Online'].window(auto_id="PasswordBox").type_keys("Lastborn220")
             time.sleep(2.5)
-            self.app.top_window().window(auto_id="PasswordBox").type_keys("{ENTER}")
+            self.app['Magic: The Gathering Online'].window(auto_id="PasswordBox").type_keys("{ENTER}")
             pyautogui.press('enter')
 
             time.sleep(20)
+            try:
+                click_rectangle(self.app.top_window().child_window(auto_id="CloseButton").rectangle())
+            except:
+                pass
+
             click_collection(self.app)
             time.sleep(10)
             click_trade(self.app)
@@ -213,35 +230,40 @@ class MTGO_bot(object):
         except:
             pass
         try:
+            click_rectangle(self.app.top_window().child_window(auto_id = "CloseButton").rectangle())
+        except:
+            pass
+
+        try:
             click_collection(self.app)
-            click_rectangle(self.app.top_window().window(title="ABinder", found_index=0).rectangle())
+            click_rectangle(self.app['Magic: The Gathering Online'].window(title="ABinder", found_index=0).rectangle())
             click_collection(self.app)
         except:
             pass
         while True:
             try:
-                rect = self.app.top_window().child_window(auto_id="DeckPane").child_window(title_re="Item: CardSlot:",
+                rect = self.app['Magic: The Gathering Online'].child_window(auto_id="DeckPane").child_window(title_re="Item: CardSlot:",
                                                                                            found_index=0).rectangle()
                 right_click_rectangle(rect)
-                click_rectangle(self.app.top_window().child_window(title_re="Remove All", found_index=0).rectangle())
+                click_rectangle(self.app['Magic: The Gathering Online'].child_window(title_re="Remove All", found_index=0).rectangle())
             except:
                 break
         try:
 
-            click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
-            self.app.top_window().window(auto_id="searchTextBox").type_keys("event{SPACE}tickets{ENTER}")
+            click_rectangle(self.app['Magic: The Gathering Online'].window(title="Other Products", found_index=1).rectangle())
+            self.app['Magic: The Gathering Online'].window(auto_id="searchTextBox").type_keys("event{SPACE}tickets{ENTER}")
             right_click_rectangle(
-                self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
+                self.app['Magic: The Gathering Online'].child_window(title_re="Item: CardSlot: Event", found_index=0).rectangle())
         except:
             self.close_mtgo()
             self.trade_status = TradeStatus.BIG_FAILURE
 
 
         try:
-            click_rectangle(self.app.top_window().child_window(title_re="Add All to", found_index=0).rectangle())
+            click_rectangle(self.app['Magic: The Gathering Online'].child_window(title_re="Add All to", found_index=0).rectangle())
         except:
             try:
-                click_rectangle(self.app.top_window().child_window(title_re="Add 1 to", found_index=0).rectangle())
+                click_rectangle(self.app['Magic: The Gathering Online'].child_window(title_re="Add 1 to", found_index=0).rectangle())
             except:
                 pyautogui.moveRel(-10, 0)
                 pyautogui.click()
@@ -251,11 +273,27 @@ class MTGO_bot(object):
         if self.db_record[6] == "HotListBot3":
             self.db_record[6] = "HotListBot4"
         elif self.db_record[6] == "HotListBot4":
+            self.db_record[6] = "HotListBot"
+        elif self.db_record[6] == "HotListBot":
             self.db_record[6] = "HotListBot2"
         elif self.db_record[6] == "HotListBot2":
             self.db_record[6] = "HotListBot3"
-        self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[6] + "{ENTER}")
+        if self.db_record[6] == "GoatBots1":
+            self.db_record[6] = "GoatBots2"
+        elif self.db_record[6] == "GoatBots2":
+            self.db_record[6] = "GoatBots3"
+        elif self.db_record[6] == "GoatBots3":
+            self.db_record[6] = "GoatBots1"
 
+        self.app['Magic: The Gathering Online'].window(auto_id="searchTextBox").type_keys(self.db_record[6] + "{ENTER}")
+
+    def all_bad_trades(self):
+        if self.last_trades.queue.qsize() < 10:
+            return False
+        for item in self.last_trades.queue:
+            if item == TradeStatus.SUCCESS:
+                return False
+        return True
 
     def click_bot_trade(self, botname):
         index = 0
@@ -264,8 +302,8 @@ class MTGO_bot(object):
                 index += 1
                 if index == 5:
                     return False
-                go_to_rectangle(self.app.top_window().window(title=botname).rectangle())
-                click_rectangle(self.app.top_window().window(title="Trade", found_index=1).rectangle())
+                go_to_rectangle(self.app['Magic: The Gathering Online'].window(title=botname).rectangle())
+                click_rectangle(self.app['Magic: The Gathering Online'].window(title="Trade", found_index=1).rectangle())
                 time.sleep(1)
                 click_ok_button(self.app)
                 return True
@@ -297,22 +335,39 @@ class MTGO_bot(object):
             self.app.top_window().window(auto_id="ChatItemsControl").print_control_identifiers()
             sys.stdout = previous_stdout
             string = stringio.getvalue()
-            pos = string.rfind("YOU RECEIVE ")
-            pos1 = string.find("(", pos)
-            pos2 = string.find(")", pos)
-            if " " in string[pos1:pos2]:
-                pos1 = string.find(" ", pos1)
-
-            print(string[pos1 + 1: pos2])
-            price = float(string[pos1 + 1: pos2])
-            return price
+            if self.db_record[5].startswith("Goat"):
+                pos = string.rfind(self.db_record[1])
+                pos1 = string.find("(", pos)
+                pos2 = string.find(")", pos)
+                price = float(string[pos1 + 1: pos2])
+                print(price)
+                return price
+            else:
+                if string.rfind(self.db_record[1]) == -1:
+                    stringio = io.StringIO()
+                    previous_stdout = sys.stdout
+                    sys.stdout = stringio
+                    self.app.top_window().window(auto_id="ChatItemsControl").print_control_identifiers()
+                    sys.stdout = previous_stdout
+                    string = stringio.getvalue()
+                pos = string.rfind("YOU RECEIVE ")
+                pos1 = string.find("(", pos)
+                pos2 = string.find(")", pos)
+                if " " in string[pos1:pos2]:
+                    pos1 = string.find(" ", pos1)
+                # print(string[pos1 + 1: pos2])
+                price = float(string[pos1 + 1: pos2])
+                print(price)
+                return price
         except:
             return None
 
     def buy_card(self):
-        end = time.time()
-        if end - start > 72000:
-            exit(-1)
+
+        try:
+            click_rectangle(self.app['ToastView'].child_window(auto_id = "CloseButton").rectangle())
+        except:
+            pass
         try:
             self.trade_status = TradeStatus.NONE
             print("Go to buy card...")
@@ -324,7 +379,7 @@ class MTGO_bot(object):
                 records = cursor.execute(command).fetchall()
             self.db_record = list(records[0])
 
-            while  self.db_record[5] not in trusted_sell_bots or self.db_record[6] not in trusted_buy_bots or self.db_record[9]:
+            while  self.db_record[5] not in trusted_sell_bots or (self.db_record[6] not in trusted_buy_bots and self.db_record[6] not in mtgolibrary_buy_bots) or self.db_record[9]:
                 command = "DELETE FROM records WHERE Id = ?;"
                 cursor.execute(command, [self.db_record[0]]).fetchall()
                 command = "SELECT * FROM records ORDER BY RANDOM() LIMIT 1;"
@@ -365,19 +420,25 @@ class MTGO_bot(object):
                 self.db_record[5] = "Vintage-cardbot2"
             try:
                 click_trade(self.app)
-                self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
+                self.app['Magic: The Gathering Online']['Rad Docking'].window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
             except:
                 return
 
             if not self.click_bot_trade(self.db_record[5]):
                 print("Bot is offline")
                 self.is_trade_cancelled()
+                self.last_trades.add(TradeStatus.BOT_OFFLINE)
                 return
-            time.sleep(8)
-
+            time.sleep(5)
+            number_of_cancelled_trades = 0
             while self.is_trade_cancelled():
+                number_of_cancelled_trades += 1
+                if number_of_cancelled_trades == 5:
+                    self.last_trades.add(TradeStatus.BOT_OFFLINE)
+                    self.trade_status = TradeStatus.BOT_OFFLINE
+                    return
                 self.click_bot_trade(self.db_record[5])
-                time.sleep(5)
+                time.sleep(3)
 
             if self.is_trade_stalled():
                 return
@@ -387,27 +448,32 @@ class MTGO_bot(object):
 
             try:
                 click_rectangle(self.app.top_window().window(auto_id="FilterCards-ResetFilterText").rectangle())
+                time.sleep(0.1)
                 self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
             except:
                 return
             print(3)
-            click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
-            click_rectangle(self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
-            time.sleep(0.5)
-            print(4)
-
             try:
-                double_click_multiple(self.app.top_window().child_window(title_re="Item: Card", found_index = 0),  int(self.db_record[8]))
+                click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
+                click_rectangle(self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
+                time.sleep(0.5)
+                print(4)
+                double_click_multiple(self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1], found_index = 0),  int(self.db_record[8]))
             except:
-                self.trade_status = TradeStatus.BIG_FAILURE
+                command = "DELETE FROM records WHERE Id = ?;"
+                cursor.execute(command, [self.db_record[0]]).fetchall()
+                click_rectangle(self.app.top_window().window(title="Cancel Trade", found_index=1).rectangle())
+                close_chat(self.app)
                 return
+
             print(5)
             time.sleep(8)
             price = self.get_tix_number_buy()
             if price is not None and price > float(self.db_record[3]):
                 command = "DELETE FROM records WHERE Id = ?;"
                 cursor.execute(command, [self.db_record[0]]).fetchall()
-                self.trade_status = TradeStatus.BIG_FAILURE
+                click_rectangle(self.app.top_window().window(title="Cancel Trade", found_index=1).rectangle())
+                close_chat(self.app)
                 return
 
 
@@ -438,6 +504,10 @@ class MTGO_bot(object):
             index = 0
             while True:
                 try:
+                    click_rectangle(self.app['ToastView'].child_window(auto_id="CloseButton").rectangle())
+                except:
+                    pass
+                try:
                     index += 1
                     time.sleep(2)
                     click_rectangle(self.app.top_window().window(title="Added to your Collection:", found_index = 0).window(auto_id="TitleBarCloseButton").rectangle())
@@ -455,6 +525,7 @@ class MTGO_bot(object):
             command = "DELETE FROM records WHERE Id = ?;"
             cursor.execute(command, [self.db_record[0]]).fetchall()
             self.trade_status = TradeStatus.SUCCESS
+            self.last_trades.add(TradeStatus.SUCCESS)
         except:
             print("Unexpected error:", sys.exc_info()[0])
             traceback.print_exc(file=sys.stdout)
@@ -464,56 +535,57 @@ class MTGO_bot(object):
 
     def sell_card(self):
         try:
+            click_rectangle(self.app.top_window().child_window(auto_id = "CloseButton").rectangle())
+        except:
+            pass
+        try:
             self.trade_status = TradeStatus.NONE
             print("Go to sell card...")
             print("Selling " + self.db_record[0] + " to " +  self.db_record[6])
-            while True:
-                try:
-                    click_trade(self.app)
-                    break
-                except:
-                    time.sleep(1)
-
-            self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[6] + "{ENTER}")
-
-            self.click_bot_trade(self.db_record[6])
-            time.sleep(8)
-
-            while self.is_trade_cancelled():
-                self.switch_bot()
-                self.click_bot_trade(self.db_record[6])
-                time.sleep(2)
-
             try:
-                self.app.top_window().window(title="Trade Canceled", found_index=1).rectangle()
+                click_trade(self.app)
+                self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[6] + "{ENTER}")
+            except:
                 return
+
+            while not self.click_bot_trade(self.db_record[6]) or self.is_trade_cancelled() or self.is_trade_stalled():
+                self.switch_bot()
+
+            time.sleep(6)
+            window_sell_name = "Trade: " + self.db_record[6]
+
+            if self.db_record[6] in mtgolibrary_buy_bots:
+                try:
+                    self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("sell{ENTER}")
+                except:
+                    pass
+                self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("{ENTER}")
+
+            try:
+                num_of_tix = get_tix_number(self.app, self.db_record[6])
+            except:
+                raise Exception
+            try:
+                if num_of_tix != 0:
+                    click_rectangle(self.app[window_sell_name].window(title="Other Products", found_index=1).rectangle())
+                    if self.db_record[6].startswith("Goat"):
+                        self.app[window_sell_name].window(auto_id="searchTextBox").type_keys("event{SPACE}tickets{ENTER}")
+                    double_click_multiple(self.app[window_sell_name].child_window(title_re="Item: CardSlot: Event", found_index=0), num_of_tix)
             except:
                 pass
 
-            #try:
-            #    self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("sell{ENTER}")
-            #except:
-            #    return
-            #self.app.top_window().window(auto_id="ChatSendEditBox").type_keys("{ENTER}")
-
-            num_of_tix = get_tix_number(self.app, self.db_record[6])
-            if num_of_tix != 0:
-                click_rectangle(self.app.top_window().window(title="Other Products", found_index=1).rectangle())
-                double_click_multiple(self.app.top_window().child_window(title_re="Item: CardSlot: Event", found_index=0), num_of_tix)
-
-            click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
+            click_rectangle(self.app[window_sell_name].window(title="Submit", found_index=1).rectangle())
             time.sleep(5)
             try:
-                click_rectangle(self.app.top_window().window(title="Submit", found_index=1).rectangle())
+                click_rectangle(self.app[window_sell_name].window(title="Submit", found_index=1).rectangle())
             except:
                 pass
-            time.sleep(5)
-
+            time.sleep(3)
+            index = 0
             while True:
-                index = 0
                 try:
                     index += 1
-                    click_rectangle(self.app.top_window().window(title="Confirm Trade", found_index=1).rectangle())
+                    click_rectangle(self.app[window_sell_name].window(title="Confirm Trade", found_index=1).rectangle())
                     time.sleep(1)
                     break
                 except:
@@ -522,13 +594,18 @@ class MTGO_bot(object):
                     pass
 
             close_chat(self.app)
+            index = 0
             while True:
                 try:
+                    index += 1
                     print("Trying to close window with stuff")
                     click_rectangle(self.app.top_window().window(title="Added to your Collection:", found_index = 0).window(auto_id="TitleBarCloseButton").rectangle())
                     time.sleep(1)
                     break
                 except:
+                    if index == 20:
+                        self.trade_status = TradeStatus.BIG_FAILURE
+                        return
                     try:
                         print("Trying to close window without stuff")
                         click_rectangle(self.app.top_window().window(auto_id="OkButton", found_index=0).rectangle())
@@ -553,6 +630,10 @@ class MTGO_bot(object):
             self.trade_status = TradeStatus.BIG_FAILURE
 
     def update_binder_after_buy(self):
+        try:
+            click_rectangle(self.app.top_window().child_window(auto_id = "CloseButton").rectangle())
+        except:
+            pass
         self.trade_status = TradeStatus.NONE
         print("Go to update values...")
         while True:
@@ -565,13 +646,17 @@ class MTGO_bot(object):
         click_rectangle(self.app.top_window().window(title="Cards", found_index=1).rectangle())
         time.sleep(1)
         self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
-        time.sleep(0.5)
+        time.sleep(1)
         try:
             double_click_multiple(self.app.top_window().child_window(auto_id="CollectionLayoutView").child_window(title_re="Item: Card", found_index = 0), int(self.db_record[8]))
         except:
             pass
 
     def update_binder_after_sell(self):
+        try:
+            click_rectangle(self.app.top_window().child_window(auto_id = "CloseButton").rectangle())
+        except:
+            pass
         self.trade_status = TradeStatus.NONE
         print("Go to update values...")
         click_collection(self.app)
@@ -590,7 +675,9 @@ class MTGO_bot(object):
                 pass
 
     def close(self):
-        pass
+        os.system("taskkill /f /im  MTGO.exe")
+
+
 while True:
     try:
         my_bot = MTGO_bot()
@@ -600,14 +687,14 @@ while True:
         my_bot.go_to_login()
         while True:
             while True:
-                if my_bot.trade_status == TradeStatus.SUCCESS:
-                    break
-                if my_bot.trade_status == TradeStatus.NONE or my_bot.trade_status == TradeStatus.BOT_OFFLINE:
-                    my_bot.go_to_buy()
-                if my_bot.trade_status == TradeStatus.BIG_FAILURE:
+                if my_bot.trade_status == TradeStatus.BIG_FAILURE or my_bot.all_bad_trades():
                     my_bot.go_to_restart()
                     my_bot.__init__()
                     my_bot.go_to_login()
+
+                if my_bot.trade_status == TradeStatus.SUCCESS:
+                    break
+                if my_bot.trade_status == TradeStatus.NONE or my_bot.trade_status == TradeStatus.BOT_OFFLINE:
                     my_bot.go_to_buy()
 
             my_bot.go_to_update()

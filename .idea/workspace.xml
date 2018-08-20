@@ -9,13 +9,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="magic_bot" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="mtgolibrary.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mtgolibrary.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="candle_factory_5.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+            <state relative-caret-position="1819">
+              <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
               <folding>
                 <element signature="e#11#41#0" expanded="true" />
               </folding>
@@ -23,11 +35,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="goatbots_cardhoarder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dict.pkl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obj/dict.pkl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="goatbots_cardhoarder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/goatbots_cardhoarder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
+            <state relative-caret-position="4165">
+              <caret line="250" column="53" selection-start-line="250" selection-start-column="53" selection-end-line="250" selection-end-column="53" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -35,33 +56,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="number_parser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/number_parser.py">
+      <file leaf-file-name="queue_with_capacity.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/queue_with_capacity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="card.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/card.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="mtgo_controller.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mtgo_controller.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6800">
-              <caret line="408" column="71" selection-start-line="408" selection-start-column="71" selection-end-line="408" selection-end-column="71" />
+            <state relative-caret-position="59">
+              <caret line="105" column="75" lean-forward="true" selection-start-line="105" selection-start-column="75" selection-end-line="105" selection-end-column="75" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -69,11 +86,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python36/Lib/site-packages/transitions/core.py">
+      <file leaf-file-name="trusted_bots.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trusted_bots.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16949">
-              <caret line="1004" selection-start-line="1004" selection-end-line="1004" />
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python36/Lib/site-packages/pywinauto/application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9316">
+              <caret line="575" column="79" selection-start-line="575" selection-start-column="79" selection-end-line="575" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_wrapper.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python36/Lib/site-packages/pywinauto/base_wrapper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7140">
+              <caret line="429" selection-start-line="429" selection-end-line="429" />
             </state>
           </provider>
         </entry>
@@ -89,36 +124,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_symbol</find>
-      <find>return</find>
-      <find>Card(</find>
-      <find>Price(</find>
-      <find>bot_name_sell</find>
-      <find>self.start_from</find>
-      <find>num</find>
-      <find>60</find>
-      <find>buyin</find>
-      <find>print</find>
-      <find>exce</find>
-      <find>url</find>
-      <find>start</find>
-      <find>MtgoLibraryGoToCard</find>
-      <find>start_</find>
-      <find>chrome</find>
-      <find>get_</find>
-      <find>get_s</find>
-      <find>get_sy</find>
-      <find>high</find>
-      <find>go_to_upda</find>
-      <find>bloom</find>
-      <find>high</find>
-      <find>tre</find>
-      <find>get_tix</find>
-      <find>deu</find>
-      <find>dmm</find>
-      <find>bot is</find>
-      <find>karn</find>
-      <find>headl</find>
+      <find>High d?.+0\.5</find>
+      <find>Misty Rainf</find>
+      <find>Hua</find>
+      <find>litera</find>
+      <find>High?.+1\.</find>
+      <find>High?.+0\.8</find>
+      <find>High?.+0\.5</find>
+      <find>High d?.+0\.1</find>
+      <find>vivi</find>
+      <find>Vivi</find>
+      <find>ABin</find>
+      <find>of Fa</find>
+      <find>Vras</find>
+      <find>High diff?.+0\.</find>
+      <find>ny</find>
+      <find>Mana</find>
+      <find>Nyxa</find>
+      <find>High diff?.+1\.</find>
+      <find>High diff?.+0\.8</find>
+      <find>High diff?.+0\.6</find>
+      <find>High diff?.+0\.4</find>
+      <find>Floo</find>
+      <find>High diff?.+0\.0</find>
+      <find>os.system(&quot;taskkill /f /im  MTGO.exe&quot;)</find>
+      <find>Force of W</find>
+      <find>High diff:?.+1\.</find>
+      <find>High diff:?.+0\.3</find>
+      <find>PoohE</find>
+      <find>Parsin</find>
+      <find>Plat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,18 +171,23 @@
         <option value="$PROJECT_DIR$/candle_factory_2.py" />
         <option value="$PROJECT_DIR$/cande_factory_5.py" />
         <option value="$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py" />
+        <option value="$PROJECT_DIR$/card.py" />
         <option value="$PROJECT_DIR$/number_parser.py" />
-        <option value="$PROJECT_DIR$/mtgo_controller.py" />
-        <option value="$PROJECT_DIR$/candle_factory_5.py" />
+        <option value="$PROJECT_DIR$/queue_with_capacity.py" />
+        <option value="$PROJECT_DIR$/mtgolibrary.py" />
         <option value="$PROJECT_DIR$/goatbots_cardhoarder.py" />
+        <option value="$PROJECT_DIR$/candle_factory_5.py" />
+        <option value="$PROJECT_DIR$/obj/dict.pkl" />
+        <option value="$PROJECT_DIR$/trusted_bots.py" />
+        <option value="$PROJECT_DIR$/mtgo_controller.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="127" />
-    <option name="width" value="1038" />
-    <option name="height" value="733" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1040" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -155,7 +195,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,10 +202,16 @@
               <item name="magic_bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="magic_bot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="magic_bot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="magic_bot" type="462c0819:PsiDirectoryNode" />
+              <item name="obj" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.goatbots-cardhoarder">
+  <component name="RunManager" selected="Python.controller">
     <configuration name="controller" type="PythonConfigurationType" factoryName="Python">
       <module name="candle_factory" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,19 +310,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14583333" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49333334" weight="0.14460205" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.40190336" side_tool="true" weight="0.29968455" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21354167" side_tool="true" weight="0.50825083" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5980966" weight="0.25577557" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48535872" weight="0.39738664" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7864583" visible="true" weight="0.29812208" />
+      <window_info id="Structure" order="1" sideWeight="0.50666666" side_tool="true" weight="0.14508928" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32838285" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.3296131" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.46232438" weight="0.5462046" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -287,26 +331,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329653" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1398243" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5980966" visible="true" weight="0.29968455" />
-      <window_info anchor="right" id="Data View" order="3" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48535872" weight="0.39905363" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.40190336" side_tool="true" visible="true" weight="0.29968455" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -331,13 +355,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>120</line>
+          <line>131</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="62" />
+          <url>file://$PROJECT_DIR$/trusted_bots.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -347,16 +371,39 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="63" />
+      <option name="time" value="87" />
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>self.second_driver.find_element_by_id(&quot;info_&quot; + self.current_set.lower())</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.second_driver.find_element_by_id(&quot;delivery_table&quot;).find_elements_by_tag_name(&quot;td&quot;)[3].find_element_by_tag_name(&quot;a&quot;).text</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.second_driver.find_element_by_id(&quot;delivery_table&quot;).find_elements_by_tag_name(&quot;td&quot;)[3].find_elements_by_tag_name(&quot;a&quot;)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>float(self.second_driver.find_element_by_id(&quot;delivery_table&quot;).find_elements_by_tag_name(&quot;td&quot;)[3].find_elements_by_tag_name(&quot;a&quot;).text)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.second_driver.find_element_by_class_name(&quot;header_cart_icon&quot;).click()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/candle_factory_4.py" />
-    <entry file="file://$PROJECT_DIR$/problems.txt" />
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
-    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
-    <entry file="file://$PROJECT_DIR$/candle_factory_4.py" />
     <entry file="file://$PROJECT_DIR$/problems.txt" />
     <entry file="file://$PROJECT_DIR$/candle_factory.py" />
     <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
@@ -395,9 +442,6 @@
     <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/chrome/webdriver.py" />
     <entry file="file://$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py" />
     <entry file="file://$PROJECT_DIR$/dojo_parser.py" />
-    <entry file="file://$PROJECT_DIR$/card.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -408,42 +452,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/card.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/queue_with_capacity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/number_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goatbots_cardhoarder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4165">
+          <caret line="250" column="53" selection-start-line="250" selection-start-column="53" selection-end-line="250" selection-end-column="53" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#30#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
+    <entry file="file://C:/Python36/Lib/site-packages/pywinauto/base_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6800">
-          <caret line="408" column="71" selection-start-line="408" selection-start-column="71" selection-end-line="408" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="7140">
+          <caret line="429" selection-start-line="429" selection-end-line="429" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/pywinauto/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9316">
+          <caret line="575" column="79" selection-start-line="575" selection-start-column="79" selection-end-line="575" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mtgolibrary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trusted_bots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obj/dict.pkl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+        <state relative-caret-position="1819">
+          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
           <folding>
             <element signature="e#11#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/goatbots_cardhoarder.py">
+    <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
+        <state relative-caret-position="59">
+          <caret line="105" column="75" lean-forward="true" selection-start-line="105" selection-start-column="75" selection-end-line="105" selection-end-column="75" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -63,6 +63,8 @@ class Card:
     def BestSellPrice(self):
         best_price = None
         for price in self.prices:
+            if price == None:
+                continue
             if best_price == None:
                 best_price = price
             elif price.sell_price < best_price.sell_price:
@@ -73,6 +75,8 @@ class Card:
     def BestBuyPrice(self):
         best_price = None
         for price in self.prices:
+            if price == None:
+                continue
             if best_price == None:
                 best_price = price
             elif price.buy_price > best_price.buy_price:
