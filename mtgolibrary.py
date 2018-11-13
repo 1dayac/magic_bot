@@ -43,6 +43,7 @@ class MtgoLibraryParser(object):
         setname, url = self.MtgoLibraryGoToCard(card)
         try:
             link = self.driver.find_element_by_link_text('View Foil')
+            time.sleep(0.5)
         except:
             return False
         link.click()

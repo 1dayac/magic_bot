@@ -88,6 +88,7 @@ class HotlistProcessor(object):
             try:
                 while self.i < len(self.rows):
                     self.processRow(self.rows[self.i])
+
                     self.i += 1
                     end = time.time()
                     if end - self.start > 600:

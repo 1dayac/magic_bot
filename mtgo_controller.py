@@ -31,9 +31,9 @@ class NoConfirmTradeException(Exception):
     pass
 
 
-set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Expeditions", "PZ2" : "You Make the Cube",  "MRD" : "Mirrodin", "KLD" : "Kaladesh", "EMN" : "Eldritch Moon", "ISD" : "Innistrad",
+set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Expeditions", "PZ2" : "Treasure Chest",  "MRD" : "Mirrodin", "KLD" : "Kaladesh", "EMN" : "Eldritch Moon", "ISD" : "Innistrad",
             "OGW" : "Oath of the Gatewatch", "DKA" : "Dark Ascension", "CMD" : "Commander (2011 Edition)", "ZEN" : "Zendikar", "XLN" : "Ixalan", "RIX" : "Rivals of Ixalan", "AVR" : "Avacyn Restored",
-            "GTC" : "Gatecrash", "MOR" : "Morningtide", "HOU" : "Hour of Devastation", "SOI" : "Shadows over Innistrad", "A25" : "Masters 25",
+            "GTC" : "Gatecrash", "GRN" : "Guilds of Ravnica", "BBD" : "Battlebond", "EX" : "Exodus", "MOR" : "Morningtide", "HOU" : "Hour of Devastation", "SOI" : "Shadows over Innistrad", "A25" : "Masters 25",
             "BFZ" : "Battle for Zendikar", "JOU" : "Journey into Nyx",  "IMA" : "Iconic Masters", "ORI" : "Magic Origins", "TPR" : "Tempest Remastered", "WL" : "Weatherlight","DTK" : "Dragons of Tarkir", "FRF" : "Fate Reforged",
             "M15" : "Magic 2015", "M14" : "Magic 2014", "M13" : "Magic 2013", "M12" : "Magic 2012", "M11" : "Magic 2011",
             "MMA" : "Modern Masters (2013 Edition)", "MM2" : "Modern Masters (2015 Edition)", "MM3" : "Modern Masters (2017 Edition)", "RTR" : "Return to Ravnica", "WWK" : "Worldwake", "ARB" : "Alara Reborn", "EVE" : "Eventide",
@@ -41,7 +41,7 @@ set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Exped
             "PLC" : "Planar Chaos", "VMA" : "Vintage Masters",  "TSP" : "Time Spiral", "CSP" : "Coldsnap", "DIS" : "Dissension", "AP" : "Apocalypse",
             "GPT" : "Guild Pact", "VI" : "Visions", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
             "ST" : "Stronghold", "TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey",
-            "NE" : "Nemesis", "MM" : "Mercadian Masques", "THS" : "Theros", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
+            "NE" : "Nemesis", "DGM" : "Dragon's Maze", "MM" : "Mercadian Masques", "THS" : "Theros", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
             "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "M19" : "Core Set 2019", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
 			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
@@ -210,7 +210,7 @@ class MTGO_bot(object):
         except:
             pass
         try:
-            self.app['Magic: The Gathering Online'].window(auto_id="UsernameTextBox").type_keys("Weill")
+            self.app['Magic: The Gathering Online'].window(auto_id="UsernameTextBox").type_keys("VerzillaBot")
             self.app['Magic: The Gathering Online'].window(auto_id="PasswordBox").type_keys("Lastborn220")
             time.sleep(2.5)
             self.app['Magic: The Gathering Online'].window(auto_id="PasswordBox").type_keys("{ENTER}")
@@ -295,7 +295,7 @@ class MTGO_bot(object):
                 return False
         return True
 
-    def click_bot_trade(self, botname):
+    def click_bot_trade(self, botname, binder):
         index = 0
         while True:
             try:
@@ -305,6 +305,7 @@ class MTGO_bot(object):
                 go_to_rectangle(self.app['Magic: The Gathering Online'].window(title=botname).rectangle())
                 click_rectangle(self.app['Magic: The Gathering Online'].window(title="Trade", found_index=1).rectangle())
                 time.sleep(1)
+                click_rectangle(self.app.top_window().window(auto_id=binder, found_index=0).rectangle())
                 click_ok_button(self.app)
                 return True
             except:
@@ -379,7 +380,7 @@ class MTGO_bot(object):
                 records = cursor.execute(command).fetchall()
             self.db_record = list(records[0])
 
-            while  self.db_record[5] not in trusted_sell_bots or (self.db_record[6] not in trusted_buy_bots and self.db_record[6] not in mtgolibrary_buy_bots) or self.db_record[9]:
+            while  self.db_record[5] not in trusted_sell_bots or (self.db_record[6] not in trusted_buy_bots and self.db_record[6] not in mtgolibrary_buy_bots):
                 command = "DELETE FROM records WHERE Id = ?;"
                 cursor.execute(command, [self.db_record[0]]).fetchall()
                 command = "SELECT * FROM records ORDER BY RANDOM() LIMIT 1;"
@@ -388,8 +389,10 @@ class MTGO_bot(object):
                     time.sleep(10)
                     records = cursor.execute(command).fetchall()
                 self.db_record = list(records[0])
+            appendix = "(foil)" if (int(self.db_record[9]) == 1) else "(regular)"
+            print("Buying " + str(self.db_record[8]) + "x"+ self.db_record[1] + "(" + self.db_record[2] + ") from " +  self.db_record[5] + " " + appendix)
 
-            print("Buying " + str(self.db_record[8]) + "x"+ self.db_record[1] + "(" + self.db_record[2] + ") from " +  self.db_record[5])
+
             if self.db_record[5] == "Applegrove":
                 self.db_record[5] = "AppleGrove"
             if self.db_record[5] == "VRTStorebot3":
@@ -424,7 +427,7 @@ class MTGO_bot(object):
             except:
                 return
 
-            if not self.click_bot_trade(self.db_record[5]):
+            if not self.click_bot_trade(self.db_record[5], "ABinder"):
                 print("Bot is offline")
                 self.is_trade_cancelled()
                 self.last_trades.add(TradeStatus.BOT_OFFLINE)
@@ -437,7 +440,7 @@ class MTGO_bot(object):
                     self.last_trades.add(TradeStatus.BOT_OFFLINE)
                     self.trade_status = TradeStatus.BOT_OFFLINE
                     return
-                self.click_bot_trade(self.db_record[5])
+                self.click_bot_trade(self.db_record[5], "ABinder")
                 time.sleep(3)
 
             if self.is_trade_stalled():
@@ -447,19 +450,29 @@ class MTGO_bot(object):
             print(2)
 
             try:
+                time.sleep(2)
                 click_rectangle(self.app.top_window().window(auto_id="FilterCards-ResetFilterText").rectangle())
                 time.sleep(0.1)
+                if int(self.db_record[9]) == 1:
+                    self.db_record[8] = str(min(int(self.db_record[8]), 2))
+                    click_rectangle(self.app.top_window().window(title="Versions", found_index = 0).rectangle())
+                    click_rectangle(self.app.top_window().window(title="Show Foils", found_index = 0).rectangle())
+                    time.sleep(0.1)
                 self.app.top_window().window(auto_id="searchTextBox").type_keys(self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
             except:
+                print("Unexpected error:", sys.exc_info()[0])
+                traceback.print_exc(file=sys.stdout)
                 return
             print(3)
             try:
                 click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
                 click_rectangle(self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
-                time.sleep(0.5)
+                time.sleep(1.5)
                 print(4)
-                double_click_multiple(self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1], found_index = 0),  int(self.db_record[8]))
+                double_click_multiple(self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1].split(",")[0], found_index = 0),  int(self.db_record[8]))
             except:
+                print("Unexpected error:", sys.exc_info()[0])
+                traceback.print_exc(file=sys.stdout)
                 command = "DELETE FROM records WHERE Id = ?;"
                 cursor.execute(command, [self.db_record[0]]).fetchall()
                 click_rectangle(self.app.top_window().window(title="Cancel Trade", found_index=1).rectangle())
@@ -548,7 +561,7 @@ class MTGO_bot(object):
             except:
                 return
 
-            while not self.click_bot_trade(self.db_record[6]) or self.is_trade_cancelled() or self.is_trade_stalled():
+            while not self.click_bot_trade(self.db_record[6], "Full Trade List") or self.is_trade_cancelled() or self.is_trade_stalled():
                 self.switch_bot()
 
             time.sleep(6)
@@ -636,6 +649,7 @@ class MTGO_bot(object):
             pass
         self.trade_status = TradeStatus.NONE
         print("Go to update values...")
+        return
         while True:
             try:
                 click_collection(self.app)
