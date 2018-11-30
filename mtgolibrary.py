@@ -15,6 +15,7 @@ else:
 
 
 class MtgoLibraryParser(object):
+    digit_clasiffier = DigitsClassifier()
     def __init__(self):
         self.main_url = "https://www.mtgowikiprice.com/"
         chrome_options = webdriver.ChromeOptions()
@@ -23,7 +24,6 @@ class MtgoLibraryParser(object):
         chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(chromedriver_path, options= chrome_options)
         self.driver.get(self.main_url)
-        self.digit_clasiffier = DigitsClassifier()
         self.card_count = 0
 
     def restart(self):
@@ -52,7 +52,7 @@ class MtgoLibraryParser(object):
 
 
     def get_price_from_image(self, e, botname, card):
-        return self.digit_clasiffier.get_price(e, botname, card)
+        return MtgoLibraryParser.digit_clasiffier.get_price(e, botname, card)
 
     def MtgoLibraryGoToCard(self, card):
         setname = card.set.upper()
