@@ -35,10 +35,9 @@ setaffinity()
 import platform
 
 if platform.system() == "Windows":
-    chromedriver_path = r"C:\Users\dmm2017\Desktop\magic_bot\chromedriver.exe"
+    chromedriver_path = r"C:\Users\IEUser\Desktop\magic_bot\chromedriver.exe"
 else:
     chromedriver_path = "/home/dmm2017/PycharmProjects/candle_factory/chromedriver"
-
 
 
 class HotlistProcessor(object):

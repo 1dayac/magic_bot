@@ -38,10 +38,10 @@ set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Exped
             "M15" : "Magic 2015", "M14" : "Magic 2014", "M13" : "Magic 2013", "M12" : "Magic 2012", "M11" : "Magic 2011",
             "MMA" : "Modern Masters (2013 Edition)", "MM2" : "Modern Masters (2015 Edition)", "MM3" : "Modern Masters (2017 Edition)", "RTR" : "Return to Ravnica", "WWK" : "Worldwake", "ARB" : "Alara Reborn", "EVE" : "Eventide",
             "SHM" : "Shadowmoor", "10E" : "Tenth Edition", "9ED" : "Ninth Edition", "8ED" : "Eighth Edition", "7E" : "Seventh Edition", "LRW" : "Lorwyn",
-            "PLC" : "Planar Chaos", "VMA" : "Vintage Masters",  "TSP" : "Time Spiral", "CSP" : "Coldsnap", "DIS" : "Dissension", "AP" : "Apocalypse",
+            "PLC" : "Planar Chaos", "VMA" : "Vintage Masters",  "TSP" : "Time Spiral", "CSP" : "Coldsnap", "DIS" : "Dissension", "AP" : "Apocalypse", "UMA" : "Ultimate Masters" ,
             "GPT" : "Guild Pact", "VI" : "Visions", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
             "ST" : "Stronghold", "TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey",
-            "NE" : "Nemesis", "DGM" : "Dragon's Maze", "MM" : "Mercadian Masques", "THS" : "Theros", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
+            "NE" : "Nemesis", "DGM" : "Dragon's Maze", "MM" : "Mercadian Masques", "THS" : "Theros", "RNA" : "Ravnica Allegiance", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
             "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "M19" : "Core Set 2019", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
 			"MS3" : "Amonkhet Invocations", "RAV" : "Ravnica: City of Guilds", "5DN" : "Fifth Dawn", "MBS" : "Mirrodin Besieged", "SOM" : "Scars of Mirrodin", "NPH" : "New Phyrexia",
@@ -192,7 +192,7 @@ class MTGO_bot(object):
             self.db_record = ""
             self.trade_status = TradeStatus.NONE
         except:
-            subprocess.Popen(['cmd.exe', '/c', r'C:\Users\dmm2017\Desktop\mtgo.appref-ms'])
+            subprocess.Popen(['cmd.exe', '/c', r'C:\Users\IEUser\Desktop\mtgo.appref-ms'])
             time.sleep(5)
             self.app = Application(backend="uia").connect(path='MTGO.exe')
             self.db_record = ""
