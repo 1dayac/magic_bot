@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7208d435-0a0a-48d3-ab0d-c2ec31d33fb1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/candle_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/candle_factory.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/candle_factory_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/candle_factory_5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mtgo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtgo_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mtgolibrary.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtgolibrary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/dict.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/obj/dict.pkl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mtgolibrary.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+            <state relative-caret-position="1938">
+              <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -33,31 +32,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/obj/dict.pkl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pywinauto/application.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3876">
-              <caret line="256" selection-start-line="256" selection-end-line="256" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/number_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -65,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="151" selection-start-line="151" selection-end-line="151" />
+            <state relative-caret-position="2006">
+              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
               <folding>
                 <element signature="e#11#41#0" expanded="true" />
               </folding>
@@ -100,11 +78,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
+            <state relative-caret-position="250">
+              <caret line="426" column="55" selection-start-line="426" selection-start-column="55" selection-end-line="426" selection-end-column="55" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -132,18 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>High diff?.+0\.4</find>
-      <find>High diff?.+0\.0</find>
-      <find>High</find>
-      <find>Volca</find>
-      <find>Collected</find>
-      <find>High diff.+?2\.</find>
-      <find>Hori</find>
-      <find>click_ok_button</find>
-      <find>click_bot_trade</find>
-      <find>foil</find>
-      <find>Grim L</find>
-      <find>March</find>
       <find>Weill</find>
       <find>Sulfur</find>
       <find>Dragons</find>
@@ -155,13 +121,25 @@
       <find>chromedriver_path</find>
       <find>dmm</find>
       <find>chromed</find>
-      <find>1E</find>
       <find>KeyErr</find>
       <find>RNA</find>
       <find>spireb</find>
       <find>KeyEr</find>
       <find>KeyError: 'UBT'</find>
       <find>border</find>
+      <find>chrome</find>
+      <find>High.+?1\.</find>
+      <find>High.+?[1-9]\.</find>
+      <find>Final</find>
+      <find>High d.+?[1-9]\.</find>
+      <find>1E</find>
+      <find>0.05</find>
+      <find>runner</find>
+      <find>runn</find>
+      <find>buymtgob</find>
+      <find>cro_te</find>
+      <find>Rad</find>
+      <find>sell_ca</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,19 +161,18 @@
         <option value="$PROJECT_DIR$/queue_with_capacity.py" />
         <option value="$PROJECT_DIR$/goatbots_cardhoarder.py" />
         <option value="$PROJECT_DIR$/trusted_bots.py" />
-        <option value="$PROJECT_DIR$/candle_factory_5.py" />
-        <option value="$PROJECT_DIR$/mtgolibrary.py" />
         <option value="$PROJECT_DIR$/number_parser.py" />
         <option value="$PROJECT_DIR$/obj/dict.pkl" />
+        <option value="$PROJECT_DIR$/candle_factory_5.py" />
+        <option value="$PROJECT_DIR$/mtgolibrary.py" />
         <option value="$PROJECT_DIR$/mtgo_controller.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="23" />
-    <option name="y" value="17" />
-    <option name="width" value="1022" />
-    <option name="height" value="726" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="972" />
+    <option name="height" value="465" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -210,11 +187,6 @@
               <item name="magic_bot" type="b2602c69:ProjectViewProjectNode" />
               <item name="magic_bot" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="magic_bot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="magic_bot" type="462c0819:PsiDirectoryNode" />
-              <item name="obj" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -223,6 +195,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -243,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.controller">
+  <component name="RunManager" selected="Python.parser">
     <configuration name="controller" type="PythonConfigurationType" factoryName="Python">
       <module name="candle_factory" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -327,14 +300,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-7" y="0" width="972" height="465" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49333334" visible="true" weight="0.12844759" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49333334" visible="true" weight="0.3490364" />
       <window_info id="Structure" order="1" sideWeight="0.50666666" side_tool="true" weight="0.14508928" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3296131" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329653" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.786052" visible="true" weight="0.6749805" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7837259" visible="true" weight="0.9096386" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.46232438" weight="0.5460218" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -342,7 +315,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32838285" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.213948" side_tool="true" weight="0.6749805" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21627408" side_tool="true" weight="0.9096386" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -369,28 +342,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>131</line>
+          <line>132</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>147</line>
+          <line>148</line>
           <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>76</line>
+          <line>77</line>
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>150</line>
+          <line>151</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>70</line>
+          <line>71</line>
           <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>426</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -470,16 +448,6 @@
     <entry file="file://C:/Python36/Lib/site-packages/pywinauto/base_wrapper.py" />
     <entry file="file://C:/Python36/Lib/site-packages/pywinauto/application.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
-    <entry file="file://$PROJECT_DIR$/mtgolibrary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/obj/dict.pkl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -487,17 +455,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pywinauto/application.py">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pywinauto/application.py" />
+    <entry file="file://$PROJECT_DIR$/mtgolibrary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3876">
-          <caret line="256" selection-start-line="256" selection-end-line="256" />
+        <state relative-caret-position="1938">
+          <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/number_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2431">
-          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        <state relative-caret-position="2006">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
           <folding>
             <element signature="e#11#41#0" expanded="true" />
           </folding>
@@ -524,16 +503,6 @@
     <entry file="file://$PROJECT_DIR$/card.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trusted_bots.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -541,12 +510,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/number_parser.py">
+    <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="250">
+          <caret line="426" column="55" selection-start-line="426" selection-start-column="55" selection-end-line="426" selection-end-column="55" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

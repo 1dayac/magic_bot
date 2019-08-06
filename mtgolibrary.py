@@ -83,7 +83,7 @@ class MtgoLibraryParser(object):
                 if bot_name_sell == "":
                     continue
                 if bot_name_sell not in trusted_sell_bots:
-                    print("Best price - " + bot_name_sell)
+                    print("Best price - " + bot_name_sell + " " + str(self.get_price_from_image(e, bot_name_sell, card)))
                     continue
             except:
                 continue

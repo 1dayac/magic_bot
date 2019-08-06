@@ -26,6 +26,7 @@ def is_basic_land(card):
 import win32api, win32con, win32process
 
 def setaffinity():
+    return
     pid  = win32api.GetCurrentProcessId()
     mask = 3 # core 7
     handle = win32api.OpenProcess(win32con.PROCESS_ALL_ACCESS, True, pid)
@@ -136,7 +137,7 @@ class HotlistProcessor(object):
         if not p:
             return
 
-        if price - p.sell_price > 0.05 and p.sell_price != 10000:
+        if price - p.sell_price > 0.025 and p.sell_price != 10000:
             print("High diff: " + p.bot_name_sell + " " + str(price - p.sell_price))
             cursor.execute("INSERT OR REPLACE INTO records VALUES(?,?,?,?,?,?,?,?,?,?)",
                            [setname + cardname, cardname, setname, price, p.sell_price, p.bot_name_sell, "HotListBot3",
