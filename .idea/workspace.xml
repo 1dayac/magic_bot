@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7208d435-0a0a-48d3-ab0d-c2ec31d33fb1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/candle_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/candle_factory.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/candle_factory_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/candle_factory_5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mtgo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtgo_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mtgolibrary.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtgolibrary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/dict.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/obj/dict.pkl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,90 +17,6 @@
   <component name="FavoritesManager">
     <favorites_list name="magic_bot" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mtgolibrary.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/number_parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
-              <folding>
-                <element signature="e#11#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/goatbots_cardhoarder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4165">
-              <caret line="250" column="53" selection-start-line="250" selection-start-column="53" selection-end-line="250" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/queue_with_capacity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/card.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="426" column="55" selection-start-line="426" selection-start-column="55" selection-end-line="426" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trusted_bots.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="133" selection-start-line="11" selection-start-column="133" selection-end-line="11" selection-end-column="133" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -108,96 +24,15 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>Weill</find>
-      <find>Sulfur</find>
-      <find>Dragons</find>
-      <find>Appl</find>
-      <find>here</find>
-      <find>Pollu</find>
-      <find>Star</find>
-      <find>digit_clasiffier</find>
-      <find>chromedriver_path</find>
-      <find>dmm</find>
-      <find>chromed</find>
-      <find>KeyErr</find>
-      <find>RNA</find>
-      <find>spireb</find>
-      <find>KeyEr</find>
-      <find>KeyError: 'UBT'</find>
-      <find>border</find>
-      <find>chrome</find>
-      <find>High.+?1\.</find>
-      <find>High.+?[1-9]\.</find>
-      <find>Final</find>
-      <find>High d.+?[1-9]\.</find>
-      <find>1E</find>
-      <find>0.05</find>
-      <find>runner</find>
-      <find>runn</find>
-      <find>buymtgob</find>
-      <find>cro_te</find>
-      <find>Rad</find>
-      <find>sell_ca</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="C:/Python27/Lib/site-packages/pytesser3/__init__.py" />
-        <option value="$PROJECT_DIR$/candle_factory_3.py" />
-        <option value="$PROJECT_DIR$/parse_internet/cande_factory_5.py" />
-        <option value="$PROJECT_DIR$/candle_factory.py" />
-        <option value="$PROJECT_DIR$/candle_factory_4.py" />
-        <option value="$PROJECT_DIR$/problems.txt" />
-        <option value="$PROJECT_DIR$/candle_factory_2.py" />
-        <option value="$PROJECT_DIR$/cande_factory_5.py" />
-        <option value="$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py" />
-        <option value="$PROJECT_DIR$/card.py" />
-        <option value="$PROJECT_DIR$/queue_with_capacity.py" />
-        <option value="$PROJECT_DIR$/goatbots_cardhoarder.py" />
-        <option value="$PROJECT_DIR$/trusted_bots.py" />
-        <option value="$PROJECT_DIR$/number_parser.py" />
-        <option value="$PROJECT_DIR$/obj/dict.pkl" />
-        <option value="$PROJECT_DIR$/candle_factory_5.py" />
-        <option value="$PROJECT_DIR$/mtgolibrary.py" />
-        <option value="$PROJECT_DIR$/mtgo_controller.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="972" />
-    <option name="height" value="465" />
-  </component>
+  <component name="ProjectId" id="1P4MeoTFB6mA48cq1yaoouhklHa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="magic_bot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="magic_bot" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -216,7 +51,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.parser">
+  <component name="RunManager" selected="Python.controller">
+    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="candle_factory" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="controller" type="PythonConfigurationType" factoryName="Python">
       <module name="candle_factory" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -282,6 +138,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.parser" />
+      <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.controller" />
       <item itemvalue="Python.goatbots-cardhoarder" />
     </list>
@@ -299,28 +156,18 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="972" height="465" extended-state="0" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49333334" visible="true" weight="0.3490364" />
-      <window_info id="Structure" order="1" sideWeight="0.50666666" side_tool="true" weight="0.14508928" />
-      <window_info id="Favorites" order="2" side_tool="true" weight="0.3296131" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.329653" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7837259" visible="true" weight="0.9096386" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.46232438" weight="0.5460218" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32838285" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.21627408" side_tool="true" weight="0.9096386" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="3" />
-    </layout>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -366,9 +213,49 @@
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
+          <line>149</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
-          <line>426</line>
-          <option name="timeStamp" value="93" />
+          <line>705</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>702</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>699</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>727</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>692</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>203</line>
+          <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>463</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/number_parser.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -379,146 +266,5 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>self.second_driver.find_element_by_id(&quot;info_&quot; + self.current_set.lower())</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.second_driver.find_element_by_id(&quot;delivery_table&quot;).find_elements_by_tag_name(&quot;td&quot;)[3].find_element_by_tag_name(&quot;a&quot;).text</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.second_driver.find_element_by_id(&quot;delivery_table&quot;).find_elements_by_tag_name(&quot;td&quot;)[3].find_elements_by_tag_name(&quot;a&quot;)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>float(self.second_driver.find_element_by_id(&quot;delivery_table&quot;).find_elements_by_tag_name(&quot;td&quot;)[3].find_elements_by_tag_name(&quot;a&quot;).text)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.second_driver.find_element_by_class_name(&quot;header_cart_icon&quot;).click()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/pytesser3/util.py" />
-    <entry file="file://C:/Python27/Lib/site-packages/pytesser3/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/resized1.bmp" />
-    <entry file="file://$PROJECT_DIR$/candle_factory_3.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/json/encoder.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/json/__init__.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/remote/utils.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/string.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/logging/__init__.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/remote/remote_connection.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/support/select.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/selenium/webdriver/remote/webelement.py" />
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-1998735142/__builtin__.py" />
-    <entry file="file://$PROJECT_DIR$/problems.txt" />
-    <entry file="file://$PROJECT_DIR$/candle_factory.py" />
-    <entry file="file://$PROJECT_DIR$/candle_factory_4.py" />
-    <entry file="file://$PROJECT_DIR$/candle_factory_2.py" />
-    <entry file="file://$PROJECT_DIR$/cande_factory_5.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/comtypes/__init__.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/chrome/options.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/pywinauto/findwindows.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/pywinauto/application.py" />
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/652478984/sys.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/pyautogui/__init__.py" />
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/652478984/builtins.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/remote/webelement.py" />
-    <entry file="file://C:/Python3.6/Lib/site-packages/selenium/webdriver/chrome/webdriver.py" />
-    <entry file="file://$PROJECT_DIR$/../MTGO_controller/mtgo_controller.py" />
-    <entry file="file://$PROJECT_DIR$/dojo_parser.py" />
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/transitions/core.py" />
-    <entry file="file://C:/Python36/Lib/site-packages/pywinauto/base_wrapper.py" />
-    <entry file="file://C:/Python36/Lib/site-packages/pywinauto/application.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/selenium/webdriver/remote/webdriver.py" />
-    <entry file="file://$PROJECT_DIR$/obj/dict.pkl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pywinauto/application.py" />
-    <entry file="file://$PROJECT_DIR$/mtgolibrary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="122" column="53" selection-start-line="122" selection-start-column="53" selection-end-line="122" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/number_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/candle_factory_5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2006">
-          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
-          <folding>
-            <element signature="e#11#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/goatbots_cardhoarder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4165">
-          <caret line="250" column="53" selection-start-line="250" selection-start-column="53" selection-end-line="250" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/queue_with_capacity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/card.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trusted_bots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="133" selection-start-line="11" selection-start-column="133" selection-end-line="11" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mtgo_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="426" column="55" selection-start-line="426" selection-start-column="55" selection-end-line="426" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

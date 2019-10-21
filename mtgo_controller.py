@@ -31,14 +31,14 @@ class NoConfirmTradeException(Exception):
     pass
 
 
-set_abbr = {"AER" : "Aether Revolt", "AKH" : "Amonkhet", "EXP" : "Zendikar Expeditions", "PZ2" : "Treasure Chest",  "MRD" : "Mirrodin", "KLD" : "Kaladesh", "EMN" : "Eldritch Moon", "ISD" : "Innistrad",
+set_abbr = {"AER" : "Aether Revolt", "C19" : "Commander (2019 Edition)","AKH" : "Amonkhet", "EXP" : "Zendikar Expeditions", "PZ2" : "Treasure Chest",  "MRD" : "Mirrodin", "KLD" : "Kaladesh", "EMN" : "Eldritch Moon", "ISD" : "Innistrad",
             "OGW" : "Oath of the Gatewatch", "DKA" : "Dark Ascension", "CMD" : "Commander (2011 Edition)", "ZEN" : "Zendikar", "XLN" : "Ixalan", "RIX" : "Rivals of Ixalan", "AVR" : "Avacyn Restored",
             "GTC" : "Gatecrash", "GRN" : "Guilds of Ravnica", "BBD" : "Battlebond", "EX" : "Exodus", "MOR" : "Morningtide", "HOU" : "Hour of Devastation", "SOI" : "Shadows over Innistrad", "A25" : "Masters 25",
             "BFZ" : "Battle for Zendikar", "JOU" : "Journey into Nyx",  "IMA" : "Iconic Masters", "ORI" : "Magic Origins", "TPR" : "Tempest Remastered", "WL" : "Weatherlight","DTK" : "Dragons of Tarkir", "FRF" : "Fate Reforged",
             "M15" : "Magic 2015", "M20" : "Core Set 2020", "M14" : "Magic 2014", "M13" : "Magic 2013", "M12" : "Magic 2012", "M11" : "Magic 2011", "WAR" : "War of the Spark",
             "MMA" : "Modern Masters (2013 Edition)", "MM2" : "Modern Masters (2015 Edition)", "MM3" : "Modern Masters (2017 Edition)", "RTR" : "Return to Ravnica", "WWK" : "Worldwake", "ARB" : "Alara Reborn", "EVE" : "Eventide",
             "SHM" : "Shadowmoor", "10E" : "Tenth Edition", "9ED" : "Ninth Edition", "8ED" : "Eighth Edition", "7E" : "Seventh Edition", "LRW" : "Lorwyn",
-            "PLC" : "Planar Chaos", "VMA" : "Vintage Masters",  "TSP" : "Time Spiral", "CSP" : "Coldsnap", "DIS" : "Dissension", "AP" : "Apocalypse", "UMA" : "Ultimate Masters" ,
+            "ELD" : "Throne of Eldraine","PLC" : "Planar Chaos", "VMA" : "Vintage Masters",  "TSP" : "Time Spiral", "CSP" : "Coldsnap", "DIS" : "Dissension", "AP" : "Apocalypse", "UMA" : "Ultimate Masters" ,
             "GPT" : "Guild Pact", "VI" : "Visions", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
             "ST" : "Stronghold", "TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey", "PS" : "Planeshift",
             "NE" : "Nemesis", "DGM" : "Dragon's Maze", "MM" : "Mercadian Masques", "THS" : "Theros", "RNA" : "Ravnica Allegiance", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
