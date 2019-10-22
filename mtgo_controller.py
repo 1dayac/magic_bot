@@ -366,19 +366,25 @@ class MTGO_bot(object):
 
     def check_inventory(self):
         click_collection(self.app)
+        print(".")
         click_rectangle(self.app.top_window().window(title="Cards", found_index=1).rectangle())
         self.app.top_window().window(auto_id="searchTextBox").type_keys(
             self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
+        print("..")
+
         click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
         try:
+            print("...")
             click_rectangle(
             self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
             time.sleep(0.5)
             click_rectangle(
                     self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1].split(",")[0],
                                                        found_index=0), int(self.db_record[8]))
+            print("....")
             return True
         except:
+            print(".....")
             return False
         pass
 
