@@ -370,13 +370,13 @@ class MTGO_bot(object):
         self.app.top_window().window(auto_id="searchTextBox").type_keys(
             self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
         click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
-        click_rectangle(
-            self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
-        time.sleep(0.5)
         try:
             click_rectangle(
-                self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1].split(",")[0],
-                                                   found_index=0), int(self.db_record[8]))
+            self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
+            time.sleep(0.5)
+            click_rectangle(
+                    self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1].split(",")[0],
+                                                       found_index=0), int(self.db_record[8]))
             return True
         except:
             return False
