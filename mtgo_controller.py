@@ -368,6 +368,7 @@ class MTGO_bot(object):
         click_collection(self.app)
         print(".")
         click_rectangle(self.app.top_window().window(title="Cards", found_index=1).rectangle())
+        click_rectangle(self.app.top_window().window(auto_id="FilterCards-ResetFilterText").rectangle())
         self.app.top_window().window(auto_id="searchTextBox").type_keys(
             self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
         print("..")
