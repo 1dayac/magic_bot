@@ -364,6 +364,24 @@ class MTGO_bot(object):
         except:
             return None
 
+    def check_inventory(self):
+        click_collection(self.app)
+        click_rectangle(self.app.top_window().window(title="Cards", found_index=1).rectangle())
+        self.app.top_window().window(auto_id="searchTextBox").type_keys(
+            self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
+        click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
+        click_rectangle(
+            self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
+        time.sleep(0.5)
+        try:
+            click_rectangle(
+                self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1].split(",")[0],
+                                                   found_index=0), int(self.db_record[8]))
+            return True
+        except:
+            return False
+        pass
+
     def buy_card(self):
 
         try:
@@ -422,6 +440,12 @@ class MTGO_bot(object):
                 self.db_record[5] = "ManaTraders_Seller5"
             if self.db_record[5] == "Vintage-Cardbot2":
                 self.db_record[5] = "Vintage-cardbot2"
+
+            if check_inventory():
+                command = "DELETE FROM records WHERE Id = ?;"
+                cursor.execute(command, [self.db_record[0]]).fetchall()
+                return
+
             try:
                 click_trade(self.app)
                 self.app['Magic: The Gathering Online'].window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
