@@ -367,21 +367,28 @@ class MTGO_bot(object):
     def check_inventory(self):
         click_collection(self.app)
         print(".")
-        click_rectangle(self.app.top_window().window(title="Cards", found_index=1).rectangle())
+        click_rectangle(self.app.top_window().window(title = "Cards", found_index=1).rectangle())
         click_rectangle(self.app.top_window().window(auto_id="FilterCards-ResetFilterText").rectangle())
         self.app.top_window().window(auto_id="searchTextBox").type_keys(
             self.db_record[1].replace(" ", "{SPACE}") + "{ENTER}")
         print("..")
 
-        click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
         try:
-            print("...")
-            click_rectangle(
-            self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
+            click_rectangle(self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
+            print("..")
+        except:
+            click_rectangle(self.app.top_window().window(auto_id="FilterCards-HeaderSet-Text").rectangle())
+            print(".....")
+
             time.sleep(0.5)
-            click_rectangle(
-                    self.app.top_window().child_window(title_re="Item: CardSlot: " + self.db_record[1].split(",")[0],
-                                                       found_index=0), int(self.db_record[8]))
+            try:
+                click_rectangle(self.app.top_window().window(auto_id="FilterCards-Option" + set_abbr[self.db_record[2]]).rectangle())
+            except:
+                pass
+        try:
+            time.sleep(0.5)
+            click_rectangle(self.app.top_window().child_window(auto_id="CollectionLayoutView").child_window(title_re="Item: Card", found_index = 0))
+
             print("....")
             return True
         except:
@@ -448,11 +455,11 @@ class MTGO_bot(object):
             if self.db_record[5] == "Vintage-Cardbot2":
                 self.db_record[5] = "Vintage-cardbot2"
 
-            if check_inventory():
-                command = "DELETE FROM records WHERE Id = ?;"
-                cursor.execute(command, [self.db_record[0]]).fetchall()
-                return
-
+            #if self.check_inventory():
+            #    command = "DELETE FROM records WHERE Id = ?;"
+            #    cursor.execute(command, [self.db_record[0]]).fetchall()
+            #    return
+            time.sleep(1)
             try:
                 click_trade(self.app)
                 self.app['Magic: The Gathering Online'].window(auto_id="searchTextBox").type_keys(self.db_record[5] + "{ENTER}")
