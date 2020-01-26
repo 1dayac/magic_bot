@@ -40,7 +40,7 @@ set_abbr = {"AER" : "Aether Revolt", "C19" : "Commander (2019 Edition)","AKH" : 
             "SHM" : "Shadowmoor", "10E" : "Tenth Edition", "9ED" : "Ninth Edition", "8ED" : "Eighth Edition", "7E" : "Seventh Edition", "LRW" : "Lorwyn",
             "ELD" : "Throne of Eldraine","PLC" : "Planar Chaos", "VMA" : "Vintage Masters",  "TSP" : "Time Spiral", "CSP" : "Coldsnap", "DIS" : "Dissension", "AP" : "Apocalypse", "UMA" : "Ultimate Masters" ,
             "GPT" : "Guild Pact", "VI" : "Visions", "DAR": "Dominaria", "SOK" : "Saviors of Kamigawa", "BOK" : "Betrayers of Kamigawa", "CHK" : "Champions of Kamigawa",
-            "ST" : "Stronghold", "TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey", "PS" : "Planeshift",
+            "ST" : "Stronghold", "SLD" : "Secret Lair", "THB" : "Theros Beyond Death" ,"TE" : "Tempest", "MI" : "Mirage", "ONS" : "Onslaught", "JUD" : "Judgment", "OD" : "Odyssey", "PS" : "Planeshift",
             "NE" : "Nemesis", "DGM" : "Dragon's Maze", "MM" : "Mercadian Masques", "THS" : "Theros", "RNA" : "Ravnica Allegiance", "ROE" : "Rise of the Eldrazi", "UZ" : "Urza's Saga", "UL" : "Urza's Legacy",
             "M10" : "Magic 2010", "SCG" : "Scourge","UD" : "Urza's Destiny", "LGN" : "Legions", "CON" : "Conflux", "M19" : "Core Set 2019", "C14" : "Commander 2014",
             "ARB" : "Alara Reborn", "ALA" : "Shards of Alara", "DST" : "Darksteel", "FUT" : "Future Sight", "EMA" : "Eternal Masters", "MS2" : "Kaladesh Inventions",
@@ -303,7 +303,7 @@ class MTGO_bot(object):
                 index += 1
                 if index == 5:
                     return False
-                go_to_rectangle(self.app['Magic: The Gathering Online'].window(title=botname).rectangle())
+                go_to_rectangle(self.app['Magic: The Gathering Online'].window(title=botname, found_index=1).rectangle())
                 click_rectangle(self.app['Magic: The Gathering Online'].window(title="Trade", found_index=1).rectangle())
                 time.sleep(1)
                 click_rectangle(self.app.top_window().window(auto_id=binder, found_index=0).rectangle())
