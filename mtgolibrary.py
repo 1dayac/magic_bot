@@ -19,9 +19,10 @@ class MtgoLibraryParser(object):
     def __init__(self):
         self.main_url = "https://www.mtgowikiprice.com/"
         chrome_options = webdriver.ChromeOptions()
-        prefs = {'profile.managed_default_content_settings.images': 2}
+        prefs = {'profile.managed_default_content_settings.images': 1}
         chrome_options.add_experimental_option("prefs", prefs)
-        chrome_options.add_argument("--headless")
+        #chrome_options.add_argument("start-maximized")
+        #chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(chromedriver_path, options= chrome_options)
         self.driver.get(self.main_url)
         self.card_count = 0
@@ -30,7 +31,7 @@ class MtgoLibraryParser(object):
         self.driver.quit()
         self.main_url = "https://www.mtgowikiprice.com/"
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--headless")
+        #chrome_options.add_argument("--headless")
         prefs = {'profile.managed_default_content_settings.images': 2}
         chrome_options.add_experimental_option("prefs", prefs)
         self.driver = webdriver.Chrome(chromedriver_path, options= chrome_options)

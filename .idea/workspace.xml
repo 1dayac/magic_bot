@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7208d435-0a0a-48d3-ab0d-c2ec31d33fb1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/candle_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/candle_factory.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards.db" beforeDir="false" afterPath="$PROJECT_DIR$/cards.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/chromedriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mtgo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtgo_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/dict.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mtgolibrary.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtgolibrary.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trusted_bots.py" beforeDir="false" afterPath="$PROJECT_DIR$/trusted_bots.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="magic_bot" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,29 +26,23 @@
   </component>
   <component name="ProjectId" id="1P4MeoTFB6mA48cq1yaoouhklHa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.parser">
+  <component name="RunManager" selected="Python.controller">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="candle_factory" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,13 +152,58 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587734600290">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587734600290" />
+    <state x="1045" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593620268833">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1045" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1593620268833" />
+    <state width="1486" height="405" key="GridCell.Tab.0.bottom" timestamp="1595434278675">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1486" height="405" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1595434278675" />
+    <state width="1486" height="405" key="GridCell.Tab.0.center" timestamp="1595434278675">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1486" height="405" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1595434278675" />
+    <state width="1486" height="405" key="GridCell.Tab.0.left" timestamp="1595434278675">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1486" height="405" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1595434278675" />
+    <state width="1486" height="405" key="GridCell.Tab.0.right" timestamp="1595434278675">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1486" height="405" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1595434278675" />
+    <state width="1362" height="328" key="GridCell.Tab.1.bottom" timestamp="1592839316556">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1362" height="328" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1592839316556" />
+    <state width="1362" height="328" key="GridCell.Tab.1.center" timestamp="1592839316556">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1362" height="328" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1592839316556" />
+    <state width="1362" height="328" key="GridCell.Tab.1.left" timestamp="1592839316556">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1362" height="328" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1592839316556" />
+    <state width="1362" height="328" key="GridCell.Tab.1.right" timestamp="1592839316556">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1362" height="328" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1592839316556" />
+    <state x="781" y="345" key="SettingsEditor" timestamp="1587734519020">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1587734519020" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -190,33 +225,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>148</line>
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
           <line>151</line>
           <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>71</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/candle_factory_5.py</url>
-          <line>149</line>
-          <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
@@ -237,11 +247,6 @@
           <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
           <line>495</line>
           <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/number_parser.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
