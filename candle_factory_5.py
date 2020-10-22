@@ -56,7 +56,10 @@ class HotlistProcessor(object):
         self.start_from = "1"
         self.set = "1"
         self.rows = []
-        self.driver_hotlist.quit()
+        try:
+            self.driver_hotlist.quit()
+        except:
+           pass
         self.driver_hotlist = None
         self.start = None
         self.i = 0
