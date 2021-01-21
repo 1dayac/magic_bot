@@ -32,7 +32,7 @@ class NoConfirmTradeException(Exception):
 
 
 set_abbr = {"ZNR" : "Zendikar Rising", "2XM" : "Double Masters", "AER" : "Aether Revolt", "C19" : "Commander (2019 Edition)", "C20" : "Ikoria Commander","AKH" : "Amonkhet", "EXP" : "Zendikar Expeditions", "PZ2" : "Treasure Chest",  "MRD" : "Mirrodin", "KLD" : "Kaladesh", "EMN" : "Eldritch Moon", "ISD" : "Innistrad",
-            "OGW" : "Oath of the Gatewatch", "DKA" : "Dark Ascension", "CMD" : "Commander (2011 Edition)", "ZEN" : "Zendikar", "XLN" : "Ixalan", "RIX" : "Rivals of Ixalan", "AVR" : "Avacyn Restored",
+            "CMR" : "Commander Legends", "OGW" : "Oath of the Gatewatch", "DKA" : "Dark Ascension", "CMD" : "Commander (2011 Edition)", "ZEN" : "Zendikar", "XLN" : "Ixalan", "RIX" : "Rivals of Ixalan", "AVR" : "Avacyn Restored",
             "GTC" : "Gatecrash", "GRN" : "Guilds of Ravnica", "M21" : "Core 2021","BBD" : "Battlebond", "EX" : "Exodus", "MOR" : "Morningtide", "HOU" : "Hour of Devastation", "SOI" : "Shadows over Innistrad", "A25" : "Masters 25",
             "BFZ" : "Battle for Zendikar", "IKO" : "Ikoria: Lair of Behemoths", "THB" : "Theros Beyond Death", "JOU" : "Journey into Nyx",  "IMA" : "Iconic Masters", "ORI" : "Magic Origins", "TPR" : "Tempest Remastered", "WL" : "Weatherlight","DTK" : "Dragons of Tarkir", "FRF" : "Fate Reforged",
             "M15" : "Magic 2015", "M20" : "Core Set 2020", "M14" : "Magic 2014", "M13" : "Magic 2013", "M12" : "Magic 2012", "M11" : "Magic 2011", "WAR" : "War of the Spark",

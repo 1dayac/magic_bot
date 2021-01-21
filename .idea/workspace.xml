@@ -21,11 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7208d435-0a0a-48d3-ab0d-c2ec31d33fb1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/candle_factory_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/candle_factory_5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards.db" beforeDir="false" afterPath="$PROJECT_DIR$/cards.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/chromedriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mtgo_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/mtgo_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/dict.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/dict.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/obj/dict.pkl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -152,6 +151,7 @@
       <item itemvalue="Python.parser" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -178,58 +178,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1045" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596366129869">
+    <state width="776" height="398" key="GridCell.Tab.0.bottom" timestamp="1610897259675">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1045" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1596366129869" />
-    <state x="1052" y="506" key="#xdebugger.evaluate" timestamp="1597916705545">
+    <state width="776" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1610897259675" />
+    <state width="776" height="398" key="GridCell.Tab.0.center" timestamp="1610897259675">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1052" y="506" key="#xdebugger.evaluate/0.0.2560.1400@0.0.2560.1400" timestamp="1597916705545" />
-    <state width="1362" height="519" key="GridCell.Tab.0.bottom" timestamp="1603285679231">
+    <state width="776" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1610897259675" />
+    <state width="776" height="398" key="GridCell.Tab.0.left" timestamp="1610897259674">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1362" height="519" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1603285679231" />
-    <state width="1362" height="519" key="GridCell.Tab.0.center" timestamp="1603285679231">
+    <state width="776" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1610897259674" />
+    <state width="776" height="398" key="GridCell.Tab.0.right" timestamp="1610897259675">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1362" height="519" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1603285679231" />
-    <state width="1362" height="519" key="GridCell.Tab.0.left" timestamp="1603285679231">
+    <state width="776" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1610897259675" />
+    <state x="781" y="345" key="SettingsEditor" timestamp="1603360638852">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1362" height="519" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1603285679231" />
-    <state width="1362" height="519" key="GridCell.Tab.0.right" timestamp="1603285679231">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1362" height="519" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1603285679231" />
-    <state width="1362" height="421" key="GridCell.Tab.1.bottom" timestamp="1601902259747">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1362" height="421" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1601902259747" />
-    <state width="1362" height="421" key="GridCell.Tab.1.center" timestamp="1601902259747">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1362" height="421" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1601902259747" />
-    <state width="1362" height="421" key="GridCell.Tab.1.left" timestamp="1601902259747">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1362" height="421" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1601902259747" />
-    <state width="1362" height="421" key="GridCell.Tab.1.right" timestamp="1601902259747">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1362" height="421" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1601902259747" />
-    <state x="781" y="345" key="SettingsEditor" timestamp="1597242247348">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1597242247348" />
-    <state x="861" y="532" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597916912683">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="861" y="532" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400@0.0.2560.1400" timestamp="1597916912683" />
-    <state x="943" y="419" width="672" height="678" key="search.everywhere.popup" timestamp="1600701339532">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="943" y="419" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1600701339532" />
+    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1603360638852" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -273,6 +241,11 @@
           <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
           <line>406</line>
           <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mtgo_controller.py</url>
+          <line>765</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
